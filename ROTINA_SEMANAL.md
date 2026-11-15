@@ -129,8 +129,10 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
   Facebook). TIPO "Reels" continua só para trend com áudio da biblioteca (status Manual).
   ARQUIVOS = ID do MP4 no Drive (02 POSTS GERADOS, nome `<ID>-01.mp4`); PRÉVIA = HYPERLINK "Ver o vídeo".
 - Frequência: 1 vídeo a cada 15 dias, dentro do rodízio de formatos (conta como a publicação de feed da semana).
-- Áudio: por enquanto sem trilha (a API não aceita música da biblioteca do Instagram). Quando o Jailson enviar uma
-  trilha instrumental livre de direitos, mixar em todos os vídeos animados.
+- Áudio (Jailson, 15/11/2026): SEMPRE com trilha instrumental alinhada à persona do escritório (sóbria, confiável,
+  moderna; andamento calmo, sem batida agitada). Usar a trilha ORIGINAL gerada por `gerador/video/trilha.py`
+  (composição própria, sem direitos de terceiros; o `animar.py` já mixa). Alternar a variação (0, 1, 2) entre os
+  vídeos. Em vídeo com fala do Jailson, trilha baixa (cerca de -24 dB) para não competir com a voz.
 - LinkedIn: publicar o mesmo vídeo na Página e compartilhar no perfil pessoal (pelo navegador, até a API ser liberada).
 - Mesmas regras do Provimento 205 e do sigilo do know-how.
 
