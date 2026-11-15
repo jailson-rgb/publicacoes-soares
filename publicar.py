@@ -67,7 +67,7 @@ def ler_fila():
     out = []
     for l in linhas[1:]:
         d = {cab[i]: (l[i].strip() if i < len(l) else "") for i in range(len(cab))}
-        if d.get("ID"):
+        if d.get("ID") and not d["ID"].upper().startswith("JA"):  # IDs JA = Justo Acordo (outro repositório)
             out.append(d)
     return out
 
