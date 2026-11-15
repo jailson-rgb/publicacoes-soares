@@ -103,18 +103,30 @@ def momento(post):
 
 # ---------------------------------------------------------------- mídia
 def preparar_midia(post):
-    """Baixa as artes do Drive, converte para JPEG e grava em midia/<ID>/."""
+    """Baixa as artes do Drive e grava em midia/<ID>/: imagens viram JPEG; vídeos (MP4/MOV) ficam como .mp4."""
     ids = [x.strip() for x in post.get("ARQUIVOS (NÃO EDITAR)", post.get("ARQUIVOS", "")).replace(";", ",").split(",") if x.strip()]
     pasta = os.path.join(MIDIA, post["ID"])
     os.makedirs(pasta, exist_ok=True)
     caminhos = []
     for n, fid in enumerate(ids, 1):
         bruto = baixar(f"https://drive.google.com/uc?export=download&id={fid}")
-        img = Image.open(io.BytesIO(bruto)).convert("RGB")
-        p = os.path.join(pasta, f"{n:02d}.jpg")
-        img.save(p, "JPEG", quality=92)
+        if bruto[:200].lstrip().lower().startswith(b"<!doctype html") or bruto[:200].lstrip().lower().startswith(b"<html"):
+            # arquivo grande (vídeo): o Drive pede confirmação; este endereço baixa direto
+            bruto = baixar(f"https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t")
+        if eh_video(bruto):
+            p = os.path.join(pasta, f"{n:02d}.mp4")
+            with open(p, "wb") as f:
+                f.write(bruto)
+        else:
+            img = Image.open(io.BytesIO(bruto)).convert("RGB")
+            p = os.path.join(pasta, f"{n:02d}.jpg")
+            img.save(p, "JPEG", quality=92)
         caminhos.append(p)
     return caminhos
+
+
+def eh_video(bruto):
+    return bruto[4:8] == b"ftyp"
 
 
 def publicar_no_github(caminhos, post_id):
@@ -143,8 +155,8 @@ def api(metodo, caminho, **params):
         raise RuntimeError(f"Meta API {caminho}: {e.read().decode()[:400]}") from None
 
 
-def aguardar_container(cid):
-    for _ in range(30):
+def aguardar_container(cid, tentativas=30):
+    for _ in range(tentativas):
         st = api("GET", cid, fields="status_code").get("status_code")
         if st == "FINISHED":
             return
@@ -154,6 +166,11 @@ def aguardar_container(cid):
 
 
 def instagram(tipo, urls, legenda):
+    if urls[0].endswith(".mp4"):
+        # vídeo próprio (animação ou fala do Jailson): publicado como Reels, também no feed
+        c = api("POST", f"{IG_USER_ID}/media", media_type="REELS", video_url=urls[0], caption=legenda, share_to_feed="true")["id"]
+        aguardar_container(c, 120)  # vídeo leva alguns minutos para processar
+        return [api("POST", f"{IG_USER_ID}/media_publish", creation_id=c)["id"]]
     if tipo == "Story":
         ids = []
         for u in urls:
@@ -182,6 +199,8 @@ def facebook(tipo, urls, legenda):
     global TOKEN
     original, TOKEN = TOKEN, page_token()
     try:
+        if urls[0].endswith(".mp4"):
+            return [api("POST", f"{FB_PAGE_ID}/videos", file_url=urls[0], description=legenda)["id"]]
         if tipo == "Story":
             ids = []
             for u in urls:
@@ -244,6 +263,7 @@ def main():
             continue
         tipo = post.get("TIPO", "Carrossel")
         if tipo == "Reels":
+            # (TIPO "Vídeo" = vídeo próprio, publicado automaticamente como Reels)
             # Reels de trend usam áudio da biblioteca do Instagram: publicação manual pelo app
             if ant[1] != "Manual":
                 status[pid] = [pid, "Manual", agora.strftime("%d/%m/%Y %H:%M"), "Publicar pelo app do celular (áudio da trend)", "0", ""]

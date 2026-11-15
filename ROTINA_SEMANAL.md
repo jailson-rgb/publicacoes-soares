@@ -115,11 +115,24 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
 - Legenda: 600–1.200 caracteres, parágrafos curtos, 3–6 hashtags (#direitoempresarial #recuperacaodeativos ...),
   terminar com "Advocacia Soares · Direito Empresarial · Crédito e Patrimônio". Sem promessa e sem "fale conosco agora".
 
-## Vídeos animados (aprovado pelo Jailson em 15/11/2026)
-- Modelo: `gerador/video/modelo-3-formas-de-cobrar.html` + `gerador/video/animar.py` (MP4 1080x1920, 30 fps).
-  Estilo: motion graphics na identidade Soares (cartões que entram, barras que crescem, selo destacado).
-- Uso: trechos de ilustração intercalados com vídeos do Jailson falando, ou animação sozinha como Reels curto.
-- Sempre com base legal e sem método do escritório; mesmas regras do Provimento 205.
+## Vídeos (aprovado pelo Jailson em 15/11/2026)
+- Duas variações:
+  1. **Vídeo animado**: só motion graphics na identidade Soares (ex.: P2026-001 "As 3 formas de cobrar").
+  2. **Vídeo do Jailson falando + intervenções ilustrativas**: ele grava no escritório e manda para 01 ENTRADA; o Claude
+     corta, intercala animações nos trechos-chave, põe legendas na tela e abertura/fechamento com o logo.
+  Cada vídeo é montado conforme o conteúdo; não há formato fixo.
+- Ferramentas: `gerador/video/animar.py` (HTML com animações CSS → MP4 1080x1920, 30 fps) e o modelo
+  `gerador/video/modelo-3-formas-de-cobrar.html` (estrutura de referência: cartões que entram, barras que crescem,
+  selo de destaque). Para o vídeo com fala: ffmpeg (cortes, sobreposição das animações, legendas).
+- Duração: 15 a 60 s (animação pura ~15 s; com fala até 90 s). Manter o último quadro ~3 s parado (vira a capa).
+- Planilha: TIPO **"Vídeo"** (publicado AUTOMATICAMENTE como Reels no Instagram, também no feed, e como vídeo no
+  Facebook). TIPO "Reels" continua só para trend com áudio da biblioteca (status Manual).
+  ARQUIVOS = ID do MP4 no Drive (02 POSTS GERADOS, nome `<ID>-01.mp4`); PRÉVIA = HYPERLINK "Ver o vídeo".
+- Frequência: 1 vídeo a cada 15 dias, dentro do rodízio de formatos (conta como a publicação de feed da semana).
+- Áudio: por enquanto sem trilha (a API não aceita música da biblioteca do Instagram). Quando o Jailson enviar uma
+  trilha instrumental livre de direitos, mixar em todos os vídeos animados.
+- LinkedIn: publicar o mesmo vídeo na Página e compartilhar no perfil pessoal (pelo navegador, até a API ser liberada).
+- Mesmas regras do Provimento 205 e do sigilo do know-how.
 
 ## Variação de formato (rodízio)
 1. Antes de criar, ler os `<ID>-post.json` das últimas 3 semanas (campo "formato" e layouts usados), guardados junto
