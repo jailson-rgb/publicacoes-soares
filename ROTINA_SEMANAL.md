@@ -13,7 +13,8 @@ pedidos avulsos ("faz um story sobre...").
 - Renderizador: `gerador/render.py` deste repositório (público: `git clone https://github.com/jailson-rgb/publicacoes-soares`).
 
 ## Grade da semana seguinte (horário de Brasília)
-- Story: segunda a sexta, 09:00 (indicador do mês, "você sabia?", chamada para o post do feed).
+- Story: segunda às 12:00; terça a sexta às 09:00 (indicador do mês, "você sabia?", chamada para o post do feed).
+  (O Jailson costuma aprovar na segunda de manhã; por isso o story de segunda sai ao meio-dia.)
 - Carrossel de jurisprudência (STJ/STF): terça, 11:00.
 - Carrossel com conteúdo do Jailson (pasta ENTRADA): quinta, 11:00. Sem conteúdo novo → tema educativo de direito empresarial ou recuperação de ativos.
 - DESTINO padrão: "Instagram + Facebook".
