@@ -240,6 +240,12 @@ def main():
                 mudou = True
             continue
         tipo = post.get("TIPO", "Carrossel")
+        if tipo == "Reels":
+            # Reels de trend usam áudio da biblioteca do Instagram: publicação manual pelo app
+            if ant[1] != "Manual":
+                status[pid] = [pid, "Manual", agora.strftime("%d/%m/%Y %H:%M"), "Publicar pelo app do celular (áudio da trend)", "0", ""]
+                mudou = True
+            continue
         destino = post.get("DESTINO", "Instagram + Facebook")
         legenda = post.get("LEGENDA", "")
         feito = ant[5]

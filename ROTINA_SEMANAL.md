@@ -47,6 +47,28 @@ pedidos avulsos ("faz um story sobre...").
   sem detalhar provas, diligências ou estratégia.
 - Nunca inventar decisão, número de processo ou estatística: tudo precisa ter fonte verificável.
 
+## Trends (aprovado pelo Jailson em 14/11/2026)
+Filtro obrigatório – a trend só entra se TODAS forem verdadeiras:
+- conversa com dono/gestor de indústria, distribuidor ou atacadista;
+- dá para ligar a direito empresarial ou recuperação de ativos;
+- tom sóbrio (Provimento 205): nada de dança, humor exagerado, exposição pessoal, ostentação, cliente, caso ou resultado;
+- respeita o sigilo do know-how (seção acima).
+Se nada da semana passar no filtro, não sai trend naquela semana (registrar isso no resumo final).
+
+1. Trend de ASSUNTO – toda semana:
+   - Pesquisar (busca na web/notícias da semana) o tema mais comentado que afete empresas: datas do varejo, caixa e 13º,
+     reforma tributária, recuperação judicial de empresa conhecida, golpes contra empresas, mudanças de lei etc.
+   - Virar 1 story (09:00 de um dia útil, no lugar de um story comum) ou 1 carrossel extra (quarta, 11:00) se o tema render.
+   - FONTE = "Trend de assunto" + link da fonte na coluna TEMA.
+2. Trend de FORMATO (Reels) – a cada 15 dias (semanas pares do ano: rodar quando o nº da semana ISO for par):
+   - Pesquisar os formatos de Reels em alta na semana (POV, "3 erros que…", "ninguém te conta que…", texto na tela
+     sincronizado com áudio do momento) e adaptar a um tema jurídico do escritório.
+   - Gerar o vídeo vertical 1080x1920 (8–15 s) só com texto na tela no padrão da marca (ffmpeg sobre as lâminas `story`),
+     SEM áudio, e enviar para "02 POSTS GERADOS".
+   - Linha na planilha com TIPO = "Reels", horário sugerido (sexta 12:00) e, na LEGENDA, primeiro a legenda e depois
+     a linha "ÁUDIO SUGERIDO: <nome do áudio/trend>". O publicador NÃO publica Reels (fica com status "Manual"):
+     o Jailson abre o vídeo no app, coloca o áudio indicado e publica.
+
 ## Formato dos posts
 - Carrossel: 4 a 7 lâminas – capa (`capa`), conteúdo (`decisao`/`topico`), fechamento (`fechamento`).
 - Story: 1 lâmina (`story` ou `story_numero`).
