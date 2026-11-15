@@ -220,6 +220,8 @@ def main():
     erros = []
     status = ler_status()
     fila = ler_fila()
+    # ordem cronológica: garante a sequência certa dos 3 posts de um mosaico (direita, meio, esquerda)
+    fila.sort(key=lambda p: momento(p) or agora)
     log(f"{len(fila)} post(s) aprovados na fila; modo {'SIMULAÇÃO' if SIMULACAO else 'PUBLICAÇÃO'}")
     mudou = False
     for post in fila:

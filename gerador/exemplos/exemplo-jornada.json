@@ -1,0 +1,29 @@
+{
+  "id": "EXEMPLO-JORNADA",
+  "tipo": "Carrossel",
+  "formato": "carrossel panorâmico · jornada",
+  "largo": {
+    "layout": "jornada",
+    "tema": "Recuperação de ativos",
+    "titulo": "Como funciona a recuperação de ativos",
+    "subtitulo": "Em termos gerais, do primeiro contato ao recebimento.",
+    "passos": [
+      {
+        "titulo": "Análise do crédito",
+        "texto": "Documentos da venda, vencimentos e prazos."
+      },
+      {
+        "titulo": "Viabilidade",
+        "texto": "Antes de agir, o cenário é avaliado e apresentado ao cliente."
+      },
+      {
+        "titulo": "Negociação",
+        "texto": "Sempre que possível, o acordo vem antes do processo."
+      },
+      {
+        "titulo": "Medida judicial",
+        "texto": "Quando necessária, a ação adequada ao documento que a empresa tem."
+      }
+    ]
+  }
+}

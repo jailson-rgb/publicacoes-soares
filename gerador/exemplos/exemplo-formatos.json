@@ -1,0 +1,128 @@
+{
+  "id": "EXEMPLO-FORMATOS",
+  "tipo": "Carrossel",
+  "tema": "Recuperação de ativos",
+  "formato": "exemplo · 9 layouts (cada lâmina pode virar um post único)",
+  "_obs": "Textos de exemplo. Dados de 'dado' e 'barras' são públicos e citados; atualizar antes de usar.",
+  "laminas": [
+    {
+      "layout": "frase",
+      "frase": "Crédito bem documentado é crédito mais fácil de recuperar.",
+      "assinatura": "Advocacia Soares",
+      "fundo": "escuro"
+    },
+    {
+      "layout": "dado",
+      "chamada": "Prazo que não perdoa",
+      "numero": "5 anos",
+      "titulo": "para cobrar dívida líquida prevista em contrato ou documento",
+      "texto": "Depois disso, a pretensão prescreve. Acompanhar os vencimentos é parte da gestão do crédito.",
+      "fonte": "Código Civil, art. 206, § 5º, I"
+    },
+    {
+      "layout": "mito",
+      "mito": "Sem título executivo, não dá para cobrar na Justiça.",
+      "verdade": "Dá. Sem título, o caminho é a ação monitória ou a ação de cobrança. O título executivo só torna o caminho mais curto."
+    },
+    {
+      "layout": "comparativo",
+      "titulo": "O documento muda o caminho da cobrança",
+      "esquerda": "Sem título executivo",
+      "itens_esquerda": [
+        "Ação monitória ou de cobrança",
+        "Primeiro se reconhece a dívida",
+        "Prazo maior até a penhora"
+      ],
+      "direita": "Com título executivo",
+      "itens_direita": [
+        "Execução direta",
+        "Devedor citado para pagar em 3 dias",
+        "Penhora mais rápida"
+      ]
+    },
+    {
+      "layout": "checklist",
+      "titulo": "Antes de vender a prazo, confira:",
+      "itens": [
+        "Pedido ou contrato assinado",
+        "Comprovante de entrega (canhoto)",
+        "Duplicata ou boleto emitidos corretamente",
+        "Cadastro do cliente e dos sócios atualizado"
+      ],
+      "fundo": "escuro"
+    },
+    {
+      "layout": "passos",
+      "titulo": "Execução de título, em termos gerais",
+      "passos": [
+        {
+          "titulo": "Petição inicial",
+          "texto": "O credor apresenta o título e o cálculo da dívida."
+        },
+        {
+          "titulo": "Citação",
+          "texto": "O devedor tem 3 dias para pagar (CPC, art. 829)."
+        },
+        {
+          "titulo": "Penhora",
+          "texto": "Sem pagamento, bens são penhorados para garantir a dívida."
+        },
+        {
+          "titulo": "Pagamento",
+          "texto": "Os bens são convertidos em dinheiro e o credor recebe."
+        }
+      ]
+    },
+    {
+      "layout": "pergunta",
+      "chamada": "Pergunta de empresário",
+      "pergunta": "Nota fiscal sozinha serve para executar?",
+      "resposta": "Não. O título executivo é a duplicata aceita ou, sem aceite, protestada e acompanhada do comprovante de entrega (Lei 5.474/1968, art. 15)."
+    },
+    {
+      "layout": "barras",
+      "chamada": "Juros e crédito",
+      "titulo": "Selic definida pelo Copom",
+      "dados": [
+        {
+          "rotulo": "set/24",
+          "valor": 10.75,
+          "texto": "10,75%"
+        },
+        {
+          "rotulo": "nov/24",
+          "valor": 11.25,
+          "texto": "11,25%"
+        },
+        {
+          "rotulo": "dez/24",
+          "valor": 12.25,
+          "texto": "12,25%"
+        },
+        {
+          "rotulo": "jan/25",
+          "valor": 13.25,
+          "texto": "13,25%"
+        },
+        {
+          "rotulo": "mar/25",
+          "valor": 14.25,
+          "texto": "14,25%"
+        },
+        {
+          "rotulo": "jun/25",
+          "valor": 15.0,
+          "texto": "15%"
+        }
+      ],
+      "fonte": "Banco Central do Brasil – decisões do Copom"
+    },
+    {
+      "layout": "nota",
+      "data": "15/11/2026",
+      "titulo": "O problema quase nunca começa na cobrança",
+      "texto": "Ele aparece antes: num pedido sem assinatura ou numa entrega sem comprovante. Documentar bem a venda é a forma mais barata de proteger o caixa da empresa.",
+      "assinatura": "Jailson Soares"
+    }
+  ]
+}

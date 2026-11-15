@@ -18,8 +18,10 @@ pedidos avulsos ("faz um story sobre...").
 ## Grade da semana seguinte (horário de Brasília)
 - Story: segunda às 12:00; terça a sexta às 09:00 (indicador do mês, "você sabia?", chamada para o post do feed).
   (O Jailson costuma aprovar na segunda de manhã; por isso o story de segunda sai ao meio-dia.)
-- Carrossel de jurisprudência (STJ/STF): terça, 12:00.
-- Carrossel com conteúdo do Jailson (pasta ENTRADA): quinta, 12:00. Sem conteúdo novo → tema educativo de direito empresarial ou recuperação de ativos.
+- Publicação de feed de jurisprudência (STJ/STF): terça, 12:00.
+- Publicação de feed com conteúdo do Jailson (pasta ENTRADA): quinta, 12:00. Sem conteúdo novo → tema educativo de direito empresarial ou recuperação de ativos.
+- "Publicação de feed" = post único, carrossel curto, carrossel longo, carrossel panorâmico ou mosaico, conforme o
+  rodízio da seção "Variação de formato" (não é mais sempre carrossel).
 - DESTINO padrão: "Instagram + Facebook".
 - Aprovação: o Jailson marca APROVAR = Sim linha a linha OU digita uma data na célula P1 da aba PUBLICAÇÕES
   ("APROVAR TUDO ATÉ"): todas as linhas até essa data com APROVAR em branco ficam aprovadas; "Não" e "Ajustar"
@@ -82,17 +84,48 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
 - Destaques do Instagram: não acrescentar stories a destaques sem pedido do Jailson (isso muda a ordem deles).
 
 ## Formato dos posts
-- Carrossel: 4 a 7 lâminas – capa (`capa`), conteúdo (`decisao`/`topico`), fechamento (`fechamento`).
+- Post único: 1 lâmina 1080x1350 (TIPO "Post único") – qualquer layout extra abaixo.
+- Carrossel curto: 3 lâminas. Carrossel longo: 5 a 7 lâminas (TIPO "Carrossel" nos dois).
+- Layouts clássicos: `capa`, `topico`, `decisao`, `fechamento`.
+- Layouts extras (gerador/exemplos/exemplo-formatos.json): `frase`, `dado` (só estatística pública com fonte e mês),
+  `mito`, `comparativo`, `checklist`, `passos` (etapas em termos gerais), `pergunta`, `barras` (só dados reais com
+  fonte), `nota`. Vários aceitam "fundo": "escuro" | "claro" | "medio".
+- Peças largas ("largo" no JSON em vez de "laminas"):
+  - Carrossel panorâmico `jornada` (exemplo-jornada.json): linha contínua entre as lâminas; conta como carrossel longo.
+  - Mosaico `mosaico` (exemplo-mosaico.json): gera 01 (esquerda), 02 (meio), 03 (direita), que formam uma imagem só
+    na grade do perfil (a grade mostra os 1.012 px centrais de cada post). Na planilha: 3 linhas "Post único", IDs
+    seguidos, DESTINO "Instagram" (sem Facebook), mesmo dia, publicando 03 às 12:00, 02 às 12:01 e 01 às 12:02.
+    Conteúdo institucional ou educativo, nunca resultado; no máximo 1 por mês; avisar no resumo que os 3 precisam
+    ser aprovados juntos.
+- PROIBIDO na Soares: layout de resultado, placar, valores recuperados, número de acordos ou de casos ganhos
+  (Provimento 205/2021). Isso existe só na Justo Acordo.
 - Story: 1 lâmina (`story` ou `story_numero`).
 - Legenda: 600–1.200 caracteres, parágrafos curtos, 3–6 hashtags (#direitoempresarial #recuperacaodeativos ...),
   terminar com "Advocacia Soares · Direito Empresarial · Crédito e Patrimônio". Sem promessa e sem "fale conosco agora".
 
+## Variação de formato (rodízio)
+1. Antes de criar, ler os `<ID>-post.json` das últimas 3 semanas (campo "formato" e layouts usados), guardados junto
+   das artes em 02 POSTS GERADOS.
+2. As publicações de feed da semana têm de ser de formatos diferentes entre si.
+3. Pelo menos 1 post único por semana. No máximo 1 carrossel longo por semana (o panorâmico conta como longo).
+4. Não repetir a mesma combinação de formato e layout principal em semanas seguidas. O mesmo layout principal só volta
+   depois de 2 semanas.
+5. O carrossel não precisa abrir com capa nem fechar com fechamento: pode abrir com pergunta, dado ou mito e fechar
+   com checklist ou frase.
+6. Escolher o layout pelo conteúdo: número forte (estatística pública) → dado; série histórica → barras; crença comum
+   → mito; antes x depois → comparativo; lista prática → checklist; processo → passos ou jornada; dúvida frequente →
+   pergunta; aprendizado/bastidor → nota.
+7. Gravar no post.json o campo "formato" (ex.: "post único · mito", "carrossel curto · pergunta+checklist").
+8. Pelo menos 1 legenda por semana termina com uma pergunta ao leitor.
+9. Trends (Reels manuais) continuam como estão.
+Provimento 205 e sigilo do know-how valem para todos os formatos (passos/jornada só em termos gerais, sem método).
+
 ## Passo a passo
 1. Ler a aba PUBLICAÇÕES para ver o último ID (formato P2026-NNN) e o que já foi feito.
 2. Reunir o material das fontes e escolher os temas da semana.
-3. Para cada post, escrever o JSON (ver `gerador/exemplo-*.json`) e renderizar com
+3. Para cada post, escrever o JSON (ver `gerador/exemplos/exemplo-*.json`), seguindo o rodízio, e renderizar com
    `python gerador/render.py post.json saida/` (instalar `playwright` e o navegador se necessário).
-4. Enviar os PNG para "02 POSTS GERADOS" com nome `<ID>-01.png`, `<ID>-02.png`...
+4. Enviar os PNG para "02 POSTS GERADOS" com nome `<ID>-01.png`, `<ID>-02.png`... e também o `<ID>-post.json` (histórico do rodízio).
 5. Acrescentar uma linha por post na aba PUBLICAÇÕES (A–K): ID; DATA (dd/mm/aaaa); HORA (hh:mm); TIPO; DESTINO; TEMA;
    FONTE; LEGENDA; PRÉVIA = link da primeira imagem; ARQUIVOS = IDs dos arquivos no Drive separados por vírgula, na ordem;
    ALERTA OAB (vazio se não houver dúvida).

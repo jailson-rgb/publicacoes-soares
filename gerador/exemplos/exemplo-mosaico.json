@@ -1,0 +1,18 @@
+{
+  "id": "EXEMPLO-MOSAICO",
+  "tipo": "Mosaico",
+  "formato": "mosaico · institucional",
+  "_obs": "Na planilha: 3 linhas Post único, DESTINO Instagram, publicar 03 (12:00), 02 (12:01), 01 (12:02). Aprovar os 3 juntos.",
+  "largo": {
+    "layout": "mosaico",
+    "chamada": "Direito empresarial",
+    "titulo": "Crédito é patrimônio.",
+    "texto": "Documentar a venda, acompanhar o vencimento e agir no tempo certo.",
+    "rodapes": [
+      "Contratos e documentos que sustentam a venda a prazo.",
+      "Análise da viabilidade antes de qualquer medida.",
+      "Advocacia Soares\nadvocaciasoares.com"
+    ],
+    "fundo": "escuro"
+  }
+}
