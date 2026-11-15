@@ -15,9 +15,12 @@ pedidos avulsos ("faz um story sobre...").
 ## Grade da semana seguinte (horário de Brasília)
 - Story: segunda às 12:00; terça a sexta às 09:00 (indicador do mês, "você sabia?", chamada para o post do feed).
   (O Jailson costuma aprovar na segunda de manhã; por isso o story de segunda sai ao meio-dia.)
-- Carrossel de jurisprudência (STJ/STF): terça, 11:00.
-- Carrossel com conteúdo do Jailson (pasta ENTRADA): quinta, 11:00. Sem conteúdo novo → tema educativo de direito empresarial ou recuperação de ativos.
+- Carrossel de jurisprudência (STJ/STF): terça, 12:00.
+- Carrossel com conteúdo do Jailson (pasta ENTRADA): quinta, 12:00. Sem conteúdo novo → tema educativo de direito empresarial ou recuperação de ativos.
 - DESTINO padrão: "Instagram + Facebook".
+- Aprovação: o Jailson marca APROVAR = Sim linha a linha OU digita uma data na célula P1 da aba PUBLICAÇÕES
+  ("APROVAR TUDO ATÉ"): todas as linhas até essa data com APROVAR em branco ficam aprovadas; "Não" e "Ajustar"
+  continuam bloqueadas. A rotina nunca escreve em P1.
 
 ## Fontes
 1. Pasta 01 ENTRADA – arquivos novos desde a última rotina (o que já virou post fica registrado na coluna TEMA/FONTE).
@@ -59,7 +62,7 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
 1. Trend de ASSUNTO – toda semana:
    - Pesquisar (busca na web/notícias da semana) o tema mais comentado que afete empresas: datas do varejo, caixa e 13º,
      reforma tributária, recuperação judicial de empresa conhecida, golpes contra empresas, mudanças de lei etc.
-   - Virar 1 story (09:00 de um dia útil, no lugar de um story comum) ou 1 carrossel extra (quarta, 11:00) se o tema render.
+   - Virar 1 story (09:00 de um dia útil, no lugar de um story comum) ou 1 carrossel extra (quarta, 12:00) se o tema render.
    - FONTE = "Trend de assunto" + link da fonte na coluna TEMA.
 2. Trend de FORMATO (Reels) – a cada 15 dias (semanas pares do ano: rodar quando o nº da semana ISO for par):
    - Pesquisar os formatos de Reels em alta na semana (POV, "3 erros que…", "ninguém te conta que…", texto na tela
