@@ -15,7 +15,7 @@ pedidos avulsos ("faz um story sobre...").
 ## Grade da semana seguinte (horário de Brasília)
 - Story: segunda a sexta, 09:00 (indicador do mês, "você sabia?", chamada para o post do feed).
 - Carrossel de jurisprudência (STJ/STF): terça, 11:00.
-- Carrossel com conteúdo do Jailson (pasta ENTRADA): quinta, 11:00. Sem conteúdo novo → tema educativo de recuperação de crédito.
+- Carrossel com conteúdo do Jailson (pasta ENTRADA): quinta, 11:00. Sem conteúdo novo → tema educativo de direito empresarial ou recuperação de ativos.
 - DESTINO padrão: "Instagram + Facebook".
 
 ## Fontes
@@ -69,10 +69,15 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
      a linha "ÁUDIO SUGERIDO: <nome do áudio/trend>". O publicador NÃO publica Reels (fica com status "Manual"):
      o Jailson abre o vídeo no app, coloca o áudio indicado e publica.
 
+## Terminologia (pedido do Jailson)
+- Usar "recuperação de ATIVOS", não "recuperação de crédito". "Crédito" só como termo técnico (habilitação de créditos,
+  título de crédito) ou na assinatura da marca "Crédito e Patrimônio".
+- Destaques do Instagram: não acrescentar stories a destaques sem pedido do Jailson (isso muda a ordem deles).
+
 ## Formato dos posts
 - Carrossel: 4 a 7 lâminas – capa (`capa`), conteúdo (`decisao`/`topico`), fechamento (`fechamento`).
 - Story: 1 lâmina (`story` ou `story_numero`).
-- Legenda: 600–1.200 caracteres, parágrafos curtos, 3–6 hashtags (#direitoempresarial #recuperacaodecredito ...),
+- Legenda: 600–1.200 caracteres, parágrafos curtos, 3–6 hashtags (#direitoempresarial #recuperacaodeativos ...),
   terminar com "Advocacia Soares · Direito Empresarial · Crédito e Patrimônio". Sem promessa e sem "fale conosco agora".
 
 ## Passo a passo

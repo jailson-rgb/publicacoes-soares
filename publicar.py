@@ -217,6 +217,7 @@ def main():
     if not FILA_ID:
         sys.exit("FILA_ID não configurado.")
     agora = datetime.now(TZ)
+    erros = []
     status = ler_status()
     fila = ler_fila()
     log(f"{len(fila)} post(s) aprovados na fila; modo {'SIMULAÇÃO' if SIMULACAO else 'PUBLICAÇÃO'}")
@@ -271,10 +272,14 @@ def main():
             status[pid] = [pid, "Publicado", datetime.now(TZ).strftime("%d/%m/%Y %H:%M"), " | ".join(det), str(tentativas), feito]
         except Exception as e:  # noqa: BLE001
             log("ERRO:", e)
+            erros.append(pid)
             status[pid] = [pid, "Erro", agora.strftime("%d/%m/%Y %H:%M"), (" | ".join(det) + " | " if det else "") + str(e)[:300], str(tentativas + 1), feito]
     if mudou:
         gravar_status(status)
     log("fim")
+    if erros:
+        # falha o job de propósito: o GitHub avisa o Jailson por e-mail
+        raise SystemExit(f"Erro ao publicar: {', '.join(erros)} (ver coluna STATUS)")
 
 
 if __name__ == "__main__":

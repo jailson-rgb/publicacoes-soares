@@ -34,6 +34,7 @@ jobs:
           FB_PAGE_ID: ${{ vars.FB_PAGE_ID }}
         run: python publicar.py
       - name: Salvar status
+        if: always()
         run: |
           git add status.csv || true
           if ! git diff --cached --quiet; then
