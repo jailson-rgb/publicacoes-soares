@@ -63,3 +63,14 @@ pedidos avulsos ("faz um story sobre...").
    FONTE; LEGENDA; PRÉVIA = link da primeira imagem; ARQUIVOS = IDs dos arquivos no Drive separados por vírgula, na ordem;
    ALERTA OAB (vazio se não houver dúvida).
 6. Terminar com um resumo curto para o Jailson: quantos posts, datas, e quais têm alerta.
+
+## LinkedIn
+- Post técnico semanal na Página SOARES ADVOCACIA (texto corrido, 1.500–3.000 caracteres, tom técnico),
+  republicado nos perfis pessoais. Autoria: marcar o colaborador no texto ("por ...").
+- Artigo mensal "caso de fundo": inspirado em caso real do escritório, escrito como SITUAÇÃO ILUSTRATIVA
+  ("Imagine uma indústria que vende a prazo a um distribuidor que, cobrado, transfere seus bens..."), nunca como
+  "nosso caso". Estrutura: 1) a situação; 2) o problema jurídico; 3) o que diz a lei e a jurisprudência pública
+  (STJ/STF/TJRS, com referência); 4) lições práticas para o empresário; 5) fecho institucional sóbrio.
+  Proibido: partes, número do processo, valores, cidade, datas, detalhes que identifiquem; "conseguimos/vencemos";
+  qualquer detalhe de método, prova ou estratégia (ver Sigilo do know-how). No máximo citar o tribunal de forma genérica.
+  Todo artigo entra na planilha com ALERTA OAB preenchido para revisão do Jailson.
