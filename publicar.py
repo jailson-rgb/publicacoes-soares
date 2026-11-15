@@ -35,7 +35,7 @@ STATUS_CSV = "status.csv"
 MIDIA = "midia"
 
 TOKEN = os.environ.get("META_TOKEN", "").strip()
-FILA_ID = os.environ.get("FILA_ID", "").strip()
+FILA_ID = os.environ.get("FILA_ID", "").strip() or "1hQb9oVOD9KMttygIky-4HqPcRznsmqVYJ8Wx5RFjveM"
 IG_USER_ID = os.environ.get("IG_USER_ID", "").strip()
 FB_PAGE_ID = os.environ.get("FB_PAGE_ID", "").strip()
 SIMULACAO = not TOKEN
@@ -198,7 +198,22 @@ def facebook(tipo, urls, legenda):
 
 
 # ---------------------------------------------------------------- principal
+def descobrir_ids():
+    """Se IG_USER_ID / FB_PAGE_ID não foram configurados, descobre pelo token."""
+    global IG_USER_ID, FB_PAGE_ID
+    if SIMULACAO or (IG_USER_ID and FB_PAGE_ID):
+        return
+    paginas = api("GET", "me/accounts", fields="id,name,instagram_business_account").get("data", [])
+    if not paginas:
+        raise SystemExit("O token não dá acesso a nenhuma Página do Facebook.")
+    pag = next((p for p in paginas if "soares" in p.get("name", "").lower()), paginas[0])
+    FB_PAGE_ID = FB_PAGE_ID or pag["id"]
+    IG_USER_ID = IG_USER_ID or pag.get("instagram_business_account", {}).get("id", "")
+    log(f"Página: {pag.get('name')} ({FB_PAGE_ID}) · Instagram: {IG_USER_ID or 'não vinculado'}")
+
+
 def main():
+    descobrir_ids()
     if not FILA_ID:
         sys.exit("FILA_ID não configurado.")
     agora = datetime.now(TZ)
