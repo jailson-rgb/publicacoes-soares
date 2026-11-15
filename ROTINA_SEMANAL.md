@@ -36,6 +36,15 @@ pedidos avulsos ("faz um story sobre...").
   quando..."), sem indicar que o caso é do escritório.
 - Decisões de tribunais superiores (STJ/STF) podem ser citadas com referência oficial (número do recurso/informativo).
 - Na dúvida, preencher a coluna K (ALERTA OAB) explicando o ponto, para o Jailson revisar.
+
+## Sigilo do know-how do escritório – obrigatório
+- NUNCA revelar COMO o escritório trabalha: métodos de investigação/pesquisa patrimonial, fontes, sistemas,
+  ferramentas, ordem das medidas, estratégias processuais específicas, provas produzidas ou como foram obtidas.
+- Conteúdo educativo fala do QUE a lei permite e do QUE os tribunais decidem (o direito), nunca do passo a passo
+  operacional do escritório. Ex.: pode "a venda de bens para fugir da execução pode ser anulada"; não pode
+  "veja como descobrimos que o devedor escondeu bens".
+- Quando houver menção a solução obtida, usar fórmula genérica ("solucionado pelos meios jurídicos cabíveis"),
+  sem detalhar provas, diligências ou estratégia.
 - Nunca inventar decisão, número de processo ou estatística: tudo precisa ter fonte verificável.
 
 ## Formato dos posts
