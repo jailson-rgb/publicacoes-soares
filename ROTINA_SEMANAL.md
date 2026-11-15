@@ -27,6 +27,18 @@ pedidos avulsos ("faz um story sobre...").
   ("APROVAR TUDO ATÉ"): todas as linhas até essa data com APROVAR em branco ficam aprovadas; "Não" e "Ajustar"
   continuam bloqueadas. A rotina nunca escreve em P1.
 
+## Linha editorial (Jailson, 15/11/2026)
+- Na Advocacia Soares o foco é **cobrança JUDICIAL** (a negociação extrajudicial é da Justo Acordo). Não apresentar o
+  escritório como cobrança extrajudicial.
+- Série permanente "As 3 formas de cobrar na Justiça": **ação de cobrança** (procedimento comum), **ação monitória**
+  e **execução de título extrajudicial**. Explorar a diferença entre elas em:
+  documento exigido (título executivo x prova escrita sem eficácia de título x qualquer prova);
+  tempo de tramitação (em termos gerais: execução é a mais curta; cobrança comum, a mais longa);
+  defesas do devedor (embargos à execução; embargos monitórios; contestação);
+  quando usar cada uma e erros comuns na documentação da venda.
+  Bons formatos: comparativo, mito, pergunta, checklist, passos e jornada. Sempre com base legal (CPC, Lei 5.474/68,
+  Código Civil) e sem revelar método ou estratégia do escritório.
+
 ## Fontes
 1. Pasta 01 ENTRADA – arquivos novos desde a última rotina (o que já virou post fica registrado na coluna TEMA/FONTE).
 2. Informativo de Jurisprudência do STJ (scon.stj.jus.br/jurisprudencia/externo/informativo/) e Informativo STF (semanal).
