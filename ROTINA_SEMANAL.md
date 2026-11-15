@@ -6,7 +6,10 @@ pedidos avulsos ("faz um story sobre...").
 ## Onde fica cada coisa
 - Planilha: VISÃO GERAL - JASA – `1EWl4M45oD3UbPBsDdoY-8jIS3own-YmZ_ObeFQcF2hI`, aba **PUBLICAÇÕES**
   (colunas A–N: ID, DATA, HORA, TIPO, DESTINO, TEMA, FONTE, LEGENDA, PRÉVIA, ARQUIVOS, ALERTA OAB, APROVAR, OBSERVAÇÕES DO JAILSON, STATUS).
-  Nunca escrever nas colunas L (APROVAR), M (OBSERVAÇÕES) e N (STATUS – fórmula). Nunca mexer nas outras abas.
+  Nunca escrever nas colunas L (APROVAR), M (OBSERVAÇÕES) e N (STATUS – fórmula) nem Q (MARCA – fórmula). Nunca mexer nas outras abas.
+  A mesma aba recebe também os posts da Justo Acordo (repositório publicacoes-justoacordo): IDs começando com **JA**
+  são reservados a ela (fundo rosado, MARCA = Justo Acordo). Os IDs da Soares NUNCA podem começar com "JA";
+  a FILA APROVADA da Soares (aba Página1) ignora as linhas JA.
 - Pasta Drive "PUBLICAÇÕES INSTA E FACE": `1yKURaCA8fzDLRouonCErZhajR1UopL7E`
   - 01 ENTRADA (conteúdos do Jailson): `1-JgH250kHm79L7L6EIxA0tp4lKrCIgIA`
   - 02 POSTS GERADOS (artes): `1hxTm78KqqtNiFHfhcPy1GCnt7RF36fZ3`
