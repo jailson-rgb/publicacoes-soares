@@ -96,8 +96,13 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
 6. Terminar com um resumo curto para o Jailson: quantos posts, datas, e quais têm alerta.
 
 ## LinkedIn
-- Post técnico semanal na Página SOARES ADVOCACIA (texto corrido, 1.500–3.000 caracteres, tom técnico),
-  republicado nos perfis pessoais. Autoria: marcar o colaborador no texto ("por ...").
+- REGRA (Jailson, 15/11/2026): toda publicação do LinkedIn é feita NA PÁGINA "Advocacia Soares"
+  (linkedin.com/company/advocacia-soares) e depois COMPARTILHADA no perfil pessoal do Jailson
+  ("Compartilhar com ideias", com uma frase curta dele). Nunca publicar só no perfil pessoal.
+- Sempre com legenda (texto + hashtags); publicação sem texto quase não aparece no feed.
+- Carrossel no LinkedIn = documento PDF (as mesmas lâminas do Instagram).
+- Post técnico semanal na Página Advocacia Soares (texto corrido, 1.500–3.000 caracteres, tom técnico),
+  compartilhado no perfil pessoal. Autoria: marcar o colaborador no texto ("por ...").
 - Artigo mensal "caso de fundo": inspirado em caso real do escritório, escrito como SITUAÇÃO ILUSTRATIVA
   ("Imagine uma indústria que vende a prazo a um distribuidor que, cobrado, transfere seus bens..."), nunca como
   "nosso caso". Estrutura: 1) a situação; 2) o problema jurídico; 3) o que diz a lei e a jurisprudência pública
