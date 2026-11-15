@@ -115,6 +115,12 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
 - Legenda: 600–1.200 caracteres, parágrafos curtos, 3–6 hashtags (#direitoempresarial #recuperacaodeativos ...),
   terminar com "Advocacia Soares · Direito Empresarial · Crédito e Patrimônio". Sem promessa e sem "fale conosco agora".
 
+## Vídeos animados (aprovado pelo Jailson em 15/11/2026)
+- Modelo: `gerador/video/modelo-3-formas-de-cobrar.html` + `gerador/video/animar.py` (MP4 1080x1920, 30 fps).
+  Estilo: motion graphics na identidade Soares (cartões que entram, barras que crescem, selo destacado).
+- Uso: trechos de ilustração intercalados com vídeos do Jailson falando, ou animação sozinha como Reels curto.
+- Sempre com base legal e sem método do escritório; mesmas regras do Provimento 205.
+
 ## Variação de formato (rodízio)
 1. Antes de criar, ler os `<ID>-post.json` das últimas 3 semanas (campo "formato" e layouts usados), guardados junto
    das artes em 02 POSTS GERADOS.
