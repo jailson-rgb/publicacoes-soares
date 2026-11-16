@@ -109,6 +109,17 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
     seguidos, DESTINO "Instagram" (sem Facebook), mesmo dia, publicando 03 às 12:00, 02 às 12:01 e 01 às 12:02.
     Conteúdo institucional ou educativo, nunca resultado; no máximo 1 por mês; avisar no resumo que os 3 precisam
     ser aprovados juntos.
+- Formatos aprovados em 16/11/2026 (catálogo no Drive: "Nova Identidade Visual – Advocacia Soares" > "05 Formatos de
+  posts – aprovados 16-11-2026"; exemplos em gerador/exemplos/exemplo-novos-16-11.json):
+  - Exclusivos da Soares: `foto` (foto do Jailson/escritório + frase), `foto_fundo` (QUALQUER foto do Jailson em tela
+    cheia com a identificação nos 4 cantos: logo, @soaresadvc, site/OAB e assinatura; legenda opcional e curta),
+    `jurisprudencia` (tese no alto + "o que muda para a sua empresa"), `glossario` (termo explicado, numerado),
+    `serie` (quadro fixo "As 3 formas de cobrar na Justiça", numerado; "destaque" = coluna do tema).
+  - Estruturas visuais: `split` (tela dividida), `palavra` (palavra gigante), `linha_tempo`, `grade` (2x2),
+    `marcatexto` (documento com trecho grifado), `fluxo` (sim/não), `moldura` (foto em moldura), `ranking`.
+  - Fotos ("imagem" no JSON = arquivo baixado da 01 ENTRADA): só fotos que o Jailson mandou; nunca fotos de clientes,
+    devedores, documentos de processo ou de terceiros. Post de foto (`foto`, `foto_fundo` ou `moldura`) a cada 15 dias,
+    SÓ quando houver foto nova na 01 ENTRADA; sem foto, segue o rodízio normal.
 - PROIBIDO na Soares: layout de resultado, placar, valores recuperados, número de acordos ou de casos ganhos
   (Provimento 205/2021). Isso existe só na Justo Acordo.
 - Story: 1 lâmina (`story` ou `story_numero`).
@@ -145,7 +156,9 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
    depois de 2 semanas.
 5. O carrossel não precisa abrir com capa nem fechar com fechamento: pode abrir com pergunta, dado ou mito e fechar
    com checklist ou frase.
-6. Escolher o layout pelo conteúdo: número forte (estatística pública) → dado; série histórica → barras; crença comum
+6. Escolher o layout pelo conteúdo (lista completa em "Formato dos posts"; usar os formatos novos no rodízio: prazos → linha_tempo;
+   4 pontos → grade; trecho de lei/contrato → marcatexto; decisão sim/não → fluxo; tese de tribunal → jurisprudencia;
+   termo técnico → glossario; impacto curto → palavra ou split; top 3 → ranking): número forte (estatística pública) → dado; série histórica → barras; crença comum
    → mito; antes x depois → comparativo; lista prática → checklist; processo → passos ou jornada; dúvida frequente →
    pergunta; aprendizado/bastidor → nota.
 7. Gravar no post.json o campo "formato" (ex.: "post único · mito", "carrossel curto · pergunta+checklist").

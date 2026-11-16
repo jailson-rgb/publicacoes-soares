@@ -1,0 +1,171 @@
+{
+ "id": "EXEMPLOS-16-11",
+ "tipo": "Carrossel",
+ "_obs": "Um exemplo de cada formato aprovado em 16/11/2026 (cada lâmina pode ser post único).",
+ "laminas": [
+  {
+   "layout": "foto",
+   "frase": "Crédito bem concedido começa no contrato, não na cobrança.",
+   "legenda": "Jailson Soares · OAB/RS 115.168"
+  },
+  {
+   "layout": "jurisprudencia",
+   "tribunal": "STJ",
+   "tese": "É admissível a ação monitória fundada em cheque prescrito.",
+   "referencia": "Súmula 299 do STJ",
+   "pratica": "Passou o prazo para executar o cheque? A dívida não acabou: o cheque ainda serve de prova escrita para cobrar pela ação monitória, dentro de 5 anos contados do dia seguinte à data de emissão (Súmula 503 do STJ)."
+  },
+  {
+   "layout": "glossario",
+   "numero": "01",
+   "termo": "Título executivo extrajudicial",
+   "classe": "substantivo · processo civil",
+   "definicao": "Documento que a lei autoriza a cobrar direto pela execução, sem precisar de um processo para provar que a dívida existe.",
+   "pratica": "Duplicata aceita ou protestada com comprovante de entrega, nota promissória, cheque e contrato assinado pelo devedor e por duas testemunhas.",
+   "base": "Base legal: Código de Processo Civil, art. 784"
+  },
+  {
+   "layout": "serie",
+   "numero": "1",
+   "titulo": "Qual caminho a sua empresa pode usar?",
+   "destaque": 2,
+   "linhas": [
+    {
+     "rotulo": "Documento",
+     "itens": [
+      "Qualquer prova da dívida (pedidos, e-mails, notas)",
+      "Prova escrita sem força de título (ex.: cheque prescrito)",
+      "Título executivo (ex.: duplicata, contrato com 2 testemunhas)"
+     ]
+    },
+    {
+     "rotulo": "Começa com",
+     "itens": [
+      "Discussão completa sobre a dívida",
+      "Ordem para pagar em 15 dias",
+      "Ordem para pagar em 3 dias, sob risco de penhora"
+     ]
+    },
+    {
+     "rotulo": "Defesa",
+     "itens": [
+      "Contestação",
+      "Embargos monitórios",
+      "Embargos à execução"
+     ]
+    }
+   ],
+   "nota": "Conteúdo informativo. O caminho adequado depende dos documentos de cada caso."
+  },
+  {
+   "layout": "split",
+   "chamada": "Direito empresarial",
+   "titulo": "Contrato bom é o que se executa.",
+   "texto": "Garantias, testemunhas e vencimentos claros transformam um papel em ferramenta de cobrança."
+  },
+  {
+   "layout": "palavra",
+   "palavra": "Prazo.",
+   "frase": "Na cobrança, o tempo joga contra quem espera."
+  },
+  {
+   "layout": "linha_tempo",
+   "chamada": "Prazos para cobrar",
+   "titulo": "Quanto tempo cada documento resiste",
+   "marcos": [
+    {
+     "quando": "6 meses",
+     "titulo": "Cheque",
+     "texto": "Execução, contados do fim do prazo de apresentação."
+    },
+    {
+     "quando": "3 anos",
+     "titulo": "Duplicata",
+     "texto": "Execução contra o sacado, do vencimento."
+    },
+    {
+     "quando": "3 anos",
+     "titulo": "Nota promissória",
+     "texto": "Execução contra o emitente, do vencimento."
+    },
+    {
+     "quando": "5 anos",
+     "titulo": "Contrato",
+     "texto": "Cobrança de dívida líquida (CC, art. 206, § 5º, I)."
+    }
+   ]
+  },
+  {
+   "layout": "grade",
+   "titulo": "4 cuidados na venda a prazo",
+   "blocos": [
+    {
+     "titulo": "Pedido assinado",
+     "texto": "Prova o que foi vendido e por quanto."
+    },
+    {
+     "titulo": "Entrega comprovada",
+     "texto": "Canhoto ou recibo assinado."
+    },
+    {
+     "titulo": "Garantia",
+     "texto": "Aval, fiança ou garantia real."
+    },
+    {
+     "titulo": "Cadastro em dia",
+     "texto": "Do cliente e dos sócios."
+    }
+   ]
+  },
+  {
+   "layout": "marcatexto",
+   "chamada": "Leia com atenção",
+   "cabecalho": "CÓDIGO DE PROCESSO CIVIL · ART. 784, III",
+   "antes": "São títulos executivos extrajudiciais: (...) III – o documento particular",
+   "grifo": "assinado pelo devedor e por 2 (duas) testemunhas",
+   "depois": ";",
+   "nota": "Sem as testemunhas, o contrato não vai direto à execução."
+  },
+  {
+   "layout": "fluxo",
+   "titulo": "Qual caminho seguir?",
+   "pergunta": "O documento é título executivo?",
+   "sim": "Execução: ordem para pagar em 3 dias",
+   "nao": "Ação monitória ou ação de cobrança"
+  },
+  {
+   "layout": "moldura",
+   "legenda": "Porto Alegre · Av. Carlos Gomes",
+   "titulo": "Todo caso começa pelos documentos.",
+   "texto": "Antes de qualquer medida, a análise do que a empresa tem em mãos."
+  },
+  {
+   "layout": "ranking",
+   "chamada": "Erros comuns",
+   "titulo": "O que mais atrapalha a cobrança",
+   "itens": [
+    {
+     "titulo": "Venda sem comprovante de entrega",
+     "texto": "Sem ele, a duplicata perde força."
+    },
+    {
+     "titulo": "Deixar o prazo correr",
+     "texto": "A prescrição não avisa quando chega."
+    },
+    {
+     "titulo": "Contrato sem testemunhas",
+     "texto": "Obriga um caminho mais longo."
+    }
+   ]
+  },
+  {
+   "layout": "foto_fundo",
+   "imagem": "caminho/da/foto-da-01-ENTRADA.jpg"
+  },
+  {
+   "layout": "foto_fundo",
+   "imagem": "caminho/da/foto-da-01-ENTRADA.jpg",
+   "legenda": "Fim de tarde no centro de Porto Alegre."
+  }
+ ]
+}
