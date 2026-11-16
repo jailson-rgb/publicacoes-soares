@@ -129,12 +129,27 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
 ## Vídeos (aprovado pelo Jailson em 15/11/2026)
 - Duas variações:
   1. **Vídeo animado**: só motion graphics na identidade Soares (ex.: P2026-001 "As 3 formas de cobrar").
-  2. **Vídeo do Jailson falando + intervenções ilustrativas**: ele grava no escritório e manda para 01 ENTRADA; o Claude
-     corta, intercala animações nos trechos-chave, põe legendas na tela e abertura/fechamento com o logo.
+  2. **Vídeo do Jailson falando + intervenções ilustrativas** (objetivo: deixar DIDÁTICO o que ele explica): ele grava
+     (celular na vertical) e manda no chat ou na 01 ENTRADA – é feito na hora (pedido avulso), sem esperar o domingo.
+     Passo a passo:
+     a) Transcrição com tempos: o ambiente do Claude não baixa modelos de reconhecimento de voz. Usar, nesta ordem:
+        a transcrição automática do Google Drive (subir o vídeo na 01 ENTRADA e ler com read_file_content, quando
+        houver), a legenda exportada pelo celular/CapCut, ou o roteiro/tópicos que o Jailson mandar junto. Sem nenhuma
+        delas, pedir ao Jailson os tópicos e os momentos-chave antes de montar.
+     b) Marcar os momentos-chave e escolher a ilustração de cada um: lei/decisão citada → cartão com trecho grifado;
+        comparação → cartões lado a lado; etapas → passos que entram em sequência; dado público → número com fonte;
+        ideias principais → palavras-chave; sempre legendas da fala (uma frase por vez).
+     c) Copiar `gerador/video/modelo-sobreposicao.html` para a pasta do post, trocar os textos (TROCAR) e acertar os
+        tempos pela transcrição; ilustrações só nos terços de cima e de baixo (rosto livre).
+     d) `python gerador/video/animar.py modelo.html <ID>-01.mp4 --sobre video_do_jailson.mp4 [variacao_trilha]`
+        (áudio dele + trilha a ~-24 dB; encerramento com o logo nos 3 s finais). Cortes de silêncio/erros: ffmpeg antes.
+     e) Mandar o MP4 ao Jailson para aprovar antes de pôr na planilha (TIPO "Vídeo"). O vídeo bruto não vai para o
+        GitHub nem para outro lugar além da 01 ENTRADA.
   Cada vídeo é montado conforme o conteúdo; não há formato fixo.
 - Ferramentas: `gerador/video/animar.py` (HTML com animações CSS → MP4 1080x1920, 30 fps) e o modelo
   `gerador/video/modelo-3-formas-de-cobrar.html` (estrutura de referência: cartões que entram, barras que crescem,
-  selo de destaque). Para o vídeo com fala: ffmpeg (cortes, sobreposição das animações, legendas).
+  selo de destaque) e `gerador/video/modelo-sobreposicao.html` (intervenções por cima do vídeo com fala: nome, cartão
+  de lei com grifo, 3 cartões, palavras-chave, legendas e encerramento). `animar.py --sobre` faz a sobreposição.
 - Duração: 15 a 60 s (animação pura ~15 s; com fala até 90 s). Manter o último quadro ~3 s parado (vira a capa).
 - Planilha: TIPO **"Vídeo"** (publicado AUTOMATICAMENTE como Reels no Instagram, também no feed, e como vídeo no
   Facebook). TIPO "Reels" continua só para trend com áudio da biblioteca (status Manual).

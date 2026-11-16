@@ -1,0 +1,103 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* MODELO DE SOBREPOSIÇÃO (Advocacia Soares): intervenções ilustrativas por cima do vídeo do Jailson falando.
+   Uso: python gerador/video/animar.py rascunhos/<ID>/modelo.html saida.mp4 --sobre video_do_jailson.mp4 [variacao_trilha]
+   - Fundo transparente: aparece o vídeo dele por baixo. Área do rosto livre: ilustrações no terço de cima
+     (y 220–800) e no terço de baixo (y 1300–1760); legendas logo acima do pé (y ~1560).
+   - Trocar os textos marcados com TROCAR e acertar os tempos (animation-delay / animation de saída) com o que
+     ele fala (usar a transcrição com tempos – ver ROTINA_SEMANAL.md, "Vídeos").
+   - Blocos prontos: 1) nome (lower third); 2) cartão de lei/decisão com trecho grifado; 3) três cartões
+     comparativos que entram em sequência; 4) palavras-chave; 5) legendas; 6) encerramento com logo (--fim).
+   - Provimento 205/2021: sem resultado, valor recuperado, caso concreto ou promessa. */
+@font-face{font-family:M;font-weight:300;src:url('../fonts/montserrat-latin-300-normal.woff2')}
+@font-face{font-family:M;font-weight:400;src:url('../fonts/montserrat-latin-400-normal.woff2')}
+@font-face{font-family:M;font-weight:600;src:url('../fonts/montserrat-latin-600-normal.woff2')}
+@font-face{font-family:M;font-weight:700;src:url('../fonts/montserrat-latin-700-normal.woff2')}
+:root{--verde:#1F3A3D;--ouro:#C29A5B;--ourod:#8C6A3A;--areia:#F7F5F0;--claro:#F4F1EA;--ink:#1C2B2C;--fim:12s}
+html,body{margin:0;background:#5d6767}
+#r{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M,sans-serif}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes out{to{opacity:0;transform:translateY(-30px)}}
+@keyframes outL{to{opacity:0;transform:translateX(-80px)}}
+@keyframes inL{from{opacity:0;transform:translateX(-120px)}to{opacity:1;transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(70px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes grifo{from{background-size:0% 100%}to{background-size:100% 100%}}
+@keyframes wipe{from{clip-path:circle(0% at 50% 100%)}to{clip-path:circle(150% at 50% 100%)}}
+@keyframes cresce{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+/* marca no topo (o vídeo todo) */
+.marca{position:absolute;left:60px;top:90px;padding:20px 28px;border-radius:22px;background:rgba(31,58,61,.9);display:flex;align-items:center;gap:16px;animation:fade .6s .3s both}
+.marca p{margin:0;line-height:1}.marca .a{font-size:22px;font-weight:300;color:var(--claro)}.marca .s{font-size:36px;font-weight:700;color:var(--ouro)}
+
+/* 1) nome (terço de baixo) – 0,6 s a 4,5 s */
+.nome{position:absolute;left:60px;top:1380px;display:flex;animation:inL .7s .6s cubic-bezier(.2,.8,.2,1) both, outL .5s 4.5s both}
+.nome .barra{width:14px;background:var(--ouro);border-radius:8px 0 0 8px}
+.nome .txt{background:var(--areia);padding:24px 40px;border-radius:0 18px 18px 0}
+.nome p{margin:0}.nome .n{font-size:50px;font-weight:700;color:var(--verde)}.nome .c{font-size:28px;color:var(--ink);margin-top:6px}
+
+/* 2) cartão de lei/decisão com grifo (terço de cima) – 5 s a 10 s */
+.lei{position:absolute;left:60px;right:60px;top:240px;background:#fff;border-radius:10px;padding:44px 48px;box-shadow:0 20px 50px rgba(0,0,0,.25);
+  transform-origin:left top;animation:up .7s 5s cubic-bezier(.2,.8,.2,1) both, out .5s 10s both}
+.lei .k{margin:0 0 20px;font-size:24px;font-weight:700;letter-spacing:4px;color:var(--ourod)}
+.lei .t{margin:0;font-family:Georgia,serif;font-size:42px;line-height:1.5;color:var(--ink)}
+.lei .g{font-weight:700;color:var(--verde);background:linear-gradient(transparent 50%,rgba(194,154,91,.6) 50%) no-repeat;background-size:0% 100%;animation:grifo 1s 6.2s ease-out both}
+
+/* 3) três cartões comparativos (terço de cima) – 10,5 s a 16 s */
+.tres{position:absolute;left:60px;right:60px;top:240px;display:flex;gap:18px;animation:out .5s 16s both}
+.tres .cart{flex:1;border-radius:22px;padding:30px 24px;background:var(--verde);color:var(--claro);opacity:0;animation:pop .5s cubic-bezier(.3,1.5,.5,1) both}
+.tres .cart:nth-child(1){animation-delay:10.5s}.tres .cart:nth-child(2){animation-delay:11.3s}
+.tres .cart:nth-child(3){animation-delay:12.1s;background:var(--ouro);color:var(--verde)}
+.tres .h{margin:0;font-size:30px;font-weight:700;line-height:1.15}.tres .x{margin:14px 0 0;font-size:24px;line-height:1.35}
+.tres .bar{height:10px;border-radius:5px;background:currentColor;opacity:.5;margin-top:22px;transform-origin:left;animation:cresce .6s both}
+
+/* 4) palavras-chave (terço de baixo) – a partir de 16,5 s */
+.chips{position:absolute;left:60px;right:60px;top:1300px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.chip{padding:20px 32px;border-radius:999px;background:var(--verde);color:var(--claro);font-size:40px;font-weight:700;opacity:0;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both}
+.chip:nth-child(1){animation-delay:16.5s}.chip:nth-child(2){animation-delay:17.1s;background:var(--ouro);color:var(--verde)}
+.chip:nth-child(3){animation-delay:17.7s;background:var(--areia);color:var(--verde)}
+
+/* 5) legendas (uma linha por vez; ajustar os tempos pela transcrição) */
+.leg{position:absolute;left:80px;right:80px;top:1600px;text-align:center}
+.leg p{position:absolute;left:0;right:0;margin:0;padding:14px 22px;border-radius:14px;background:rgba(31,58,61,.82);color:#fff;font-size:38px;font-weight:600;line-height:1.25;opacity:0}
+
+/* 6) encerramento – últimos 3 s */
+.fim{position:absolute;inset:0;background:var(--verde);color:var(--claro);animation:wipe .9s var(--fim) cubic-bezier(.6,0,.2,1) both}
+.fim .logo{position:absolute;left:96px;top:640px;display:flex;align-items:center;gap:30px;opacity:0;animation:fade .5s calc(var(--fim) + .5s) both}
+.fim .logo .a{margin:0;font-size:52px;font-weight:300}.fim .logo .s{margin:0;font-size:92px;font-weight:700;color:var(--ouro);line-height:1}
+.fim .ass{position:absolute;left:96px;top:960px;opacity:0;animation:up .6s calc(var(--fim) + .8s) both}
+.fim .ass p{margin:0 0 10px;font-size:34px;font-weight:700;letter-spacing:5px}.fim .ass p+p{color:var(--ouro)}
+.fim .site{position:absolute;left:96px;bottom:200px;font-size:36px;font-weight:600;letter-spacing:1px;opacity:0;animation:fade .5s calc(var(--fim) + 1.2s) both}
+</style></head><body>
+<div id="r">
+  <div class="marca"><svg width="70" height="70" viewBox="0 0 120 120"><rect x="8" y="54" width="26" height="60" fill="#F4F1EA"/><rect x="47" y="32" width="26" height="82" fill="#F4F1EA"/><rect x="86" y="8" width="26" height="106" fill="#C29A5B"/></svg>
+    <div><p class="a">Advocacia</p><p class="s">Soares</p></div></div>
+
+  <div class="nome"><div class="barra"></div><div class="txt">
+    <p class="n">Jailson Soares</p><p class="c">Advogado · OAB/RS 115.168 · Direito Empresarial</p></div></div>
+
+  <div class="lei"><p class="k">CÓDIGO DE PROCESSO CIVIL · ART. 784, III</p>   <!-- TROCAR -->
+    <p class="t">o documento particular <span class="g">assinado pelo devedor e por 2 testemunhas</span> é título executivo.</p></div>   <!-- TROCAR -->
+
+  <div class="tres">   <!-- TROCAR -->
+    <div class="cart"><p class="h">Ação de cobrança</p><p class="x">Qualquer prova da dívida</p><div class="bar" style="animation-delay:10.9s;width:100%"></div></div>
+    <div class="cart"><p class="h">Monitória</p><p class="x">Prova escrita sem força de título</p><div class="bar" style="animation-delay:11.7s;width:66%"></div></div>
+    <div class="cart"><p class="h">Execução</p><p class="x">Título executivo: pagar em 3 dias</p><div class="bar" style="animation-delay:12.5s;width:33%"></div></div>
+  </div>
+
+  <div class="chips">   <!-- TROCAR -->
+    <div class="chip">Documente a venda</div>
+    <div class="chip">Contrato com 2 testemunhas</div>
+    <div class="chip">Aja dentro do prazo</div>
+  </div>
+
+  <div class="leg">   <!-- TROCAR: uma <p> por frase; style com o início e o fim (s) da frase na transcrição -->
+    <p style="animation:fade .2s 0.6s both, out .2s 3.8s both">Hoje eu quero falar de um detalhe que muda tudo na cobrança.</p>
+    <p style="animation:fade .2s 4s both, out .2s 8.6s both">O contrato assinado por duas testemunhas vira título executivo.</p>
+  </div>
+
+  <div class="fim">
+    <div class="logo"><svg width="170" height="170" viewBox="0 0 120 120"><rect x="8" y="54" width="26" height="60" fill="#F4F1EA"/><rect x="47" y="32" width="26" height="82" fill="#F4F1EA"/><rect x="86" y="8" width="26" height="106" fill="#C29A5B"/></svg>
+      <div><p class="a">Advocacia</p><p class="s">Soares</p></div></div>
+    <div class="ass"><p>DIREITO EMPRESARIAL</p><p>CRÉDITO E PATRIMÔNIO</p></div>
+    <div class="site">advocaciasoares.com · @soaresadvc</div></div>
+</div></body></html>
