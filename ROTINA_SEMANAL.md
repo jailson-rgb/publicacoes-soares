@@ -136,13 +136,18 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
         a transcrição automática do Google Drive (subir o vídeo na 01 ENTRADA e ler com read_file_content, quando
         houver), a legenda exportada pelo celular/CapCut, ou o roteiro/tópicos que o Jailson mandar junto. Sem nenhuma
         delas, pedir ao Jailson os tópicos e os momentos-chave antes de montar.
+     a2) CORTES (pedido do Jailson, 16/11/2026: vídeo fluido): antes das ilustrações, rodar
+        `python gerador/video/cortar.py bruto.mp4 cortado.mp4 [--cortar "0:42-0:45,..."]`. Pausas longas saem
+        sozinhas (ficam ~0,25 s de respiro); gaguejos, palavras repetidas e frases recomeçadas vão em --cortar, a
+        partir da transcrição com tempos ou dos trechos que o Jailson indicar. O cortado.txt lista o que saiu e vai
+        junto na aprovação. Na dúvida, não cortar conteúdo; os tempos das ilustrações são marcados no vídeo JÁ cortado.
      b) Marcar os momentos-chave e escolher a ilustração de cada um: lei/decisão citada → cartão com trecho grifado;
         comparação → cartões lado a lado; etapas → passos que entram em sequência; dado público → número com fonte;
         ideias principais → palavras-chave; sempre legendas da fala (uma frase por vez).
      c) Copiar `gerador/video/modelo-sobreposicao.html` para a pasta do post, trocar os textos (TROCAR) e acertar os
         tempos pela transcrição; ilustrações só nos terços de cima e de baixo (rosto livre).
      d) `python gerador/video/animar.py modelo.html <ID>-01.mp4 --sobre video_do_jailson.mp4 [variacao_trilha]`
-        (áudio dele + trilha a ~-24 dB; encerramento com o logo nos 3 s finais). Cortes de silêncio/erros: ffmpeg antes.
+        (áudio dele + trilha a ~-24 dB; encerramento com o logo nos 3 s finais). Usar sempre o vídeo já cortado (passo a2).
      e) Mandar o MP4 ao Jailson para aprovar antes de pôr na planilha (TIPO "Vídeo"). O vídeo bruto não vai para o
         GitHub nem para outro lugar além da 01 ENTRADA.
   Cada vídeo é montado conforme o conteúdo; não há formato fixo.
