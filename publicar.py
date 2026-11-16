@@ -262,6 +262,12 @@ def main():
                 mudou = True
             continue
         tipo = post.get("TIPO", "Carrossel")
+        if post.get("DESTINO", "") == "LinkedIn":
+            # LinkedIn (texto) é publicado pelo Claude no navegador, depois da aprovação; aqui só sinaliza
+            if ant[1] not in ("LinkedIn", "Publicado"):
+                status[pid] = [pid, "LinkedIn", agora.strftime("%d/%m/%Y %H:%M"), "Publicação no LinkedIn pelo navegador", "0", ""]
+                mudou = True
+            continue
         if tipo == "Reels":
             # (TIPO "Vídeo" = vídeo próprio, publicado automaticamente como Reels)
             # Reels de trend usam áudio da biblioteca do Instagram: publicação manual pelo app

@@ -169,9 +169,15 @@ Provimento 205 e sigilo do know-how valem para todos os formatos (passos/jornada
   (linkedin.com/company/advocacia-soares) e depois COMPARTILHADA no perfil pessoal do Jailson
   ("Compartilhar com ideias", com uma frase curta dele). Nunca publicar só no perfil pessoal.
 - Sempre com legenda (texto + hashtags); publicação sem texto quase não aparece no feed.
-- Carrossel no LinkedIn = documento PDF (as mesmas lâminas do Instagram).
-- Post técnico semanal na Página Advocacia Soares (texto corrido, 1.500–3.000 caracteres, tom técnico),
-  compartilhado no perfil pessoal. Autoria: marcar o colaborador no texto ("por ...").
+- SÓ TEXTO (Jailson, 16/11/2026): no LinkedIn não há vídeo nem carrossel; só mini-artigos em texto e o artigo mensal.
+- Mini-artigo semanal: aprofunda o tema principal da semana (de preferência o da quinta), 1.300–2.500 caracteres,
+  gancho forte na 1ª linha, parágrafos curtos, base legal citada, lições práticas, pergunta ao leitor no fim,
+  3–5 hashtags. Tom técnico e sóbrio (público: diretores, sócios, gestores de crédito). Sem emojis decorativos.
+- Planilha: 1 linha por texto, TIPO "Texto" (mini-artigo) ou "Artigo" (mensal), DESTINO "LinkedIn", LEGENDA = texto
+  completo, PRÉVIA e ARQUIVOS vazios; na coluna ALERTA OAB, além do alerta, a "Frase para compartilhar no perfil:
+  ...". Horário sugerido: terça a quinta, 08:30. O publicador da Meta ignora essas linhas (STATUS "LinkedIn").
+- Publicação: só DEPOIS da aprovação do Jailson (APROVAR = Sim ou P1). O Claude publica pelo Chrome na Página e
+  compartilha no perfil pessoal com a frase aprovada; depois grava "Publicado" no status.csv (linha do ID) e faz push.
 - Artigo mensal "caso de fundo": inspirado em caso real do escritório, escrito como SITUAÇÃO ILUSTRATIVA
   ("Imagine uma indústria que vende a prazo a um distribuidor que, cobrado, transfere seus bens..."), nunca como
   "nosso caso". Estrutura: 1) a situação; 2) o problema jurídico; 3) o que diz a lei e a jurisprudência pública
