@@ -2,7 +2,7 @@ name: Publicar posts aprovados
 
 on:
   schedule:
-    - cron: "7 * * * *"   # de hora em hora (minuto 7)
+    - cron: "27 * * * *"  # RESERVA (1x por hora). O disparo principal, a cada 15 min, vem do Worker "disparador-publicador" na Cloudflare (infra/disparador-publicador.js)
   workflow_dispatch: {}     # botão "Run workflow" para publicar na hora
 
 permissions:
