@@ -166,6 +166,18 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
 9. Trends (Reels manuais) continuam como estão.
 Provimento 205 e sigilo do know-how valem para todos os formatos (passos/jornada só em termos gerais, sem método).
 
+## Intercalar com a Justo Acordo (regra do Jailson, 16/11/2026)
+As duas marcas usam os MESMOS desenhos (cada uma na sua identidade). Para os perfis não parecerem iguais:
+1. Antes de escolher os layouts da semana, ver os da outra marca: as publicações da semana que está sendo criada
+   (na rodada única de domingo a Soares é feita primeiro) e as das 2 semanas anteriores – campo "formato"/layouts dos
+   post.json (Soares: `<ID>-post.json` na pasta 02 POSTS GERADOS da Soares; Justo Acordo: `rascunhos/<ID>/post.json`
+   do repositório publicacoes-justoacordo) e a coluna TIPO da aba PUBLICAÇÕES.
+2. No MESMO DIA, as duas marcas nunca publicam o mesmo layout principal nem o mesmo formato (ex.: se a Soares sai com
+   carrossel `passos` na terça, a Justo Acordo sai com post único ou outro layout).
+3. Na MESMA SEMANA, não repetir entre as marcas a mesma "receita" (formato + layout principal); mosaico, panorâmico e
+   post de foto: no máximo uma das marcas por semana.
+4. Gravar o "formato" no post.json (como já é feito) para a outra marca conseguir conferir.
+
 ## Passo a passo
 1. Ler a aba PUBLICAÇÕES para ver o último ID (formato P2026-NNN) e o que já foi feito.
 2. Reunir o material das fontes e escolher os temas da semana.
