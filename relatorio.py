@@ -49,8 +49,22 @@ def n(x):
     return f"{int(x):,}".replace(",", ".") if isinstance(x, (int, float)) else "–"
 
 
+def descobrir_ids():
+    """Sem IG_USER_ID/FB_PAGE_ID configurados, descobre pelo token (Página cujo nome contém a marca)."""
+    global IG, FB
+    if IG and FB:
+        return
+    pags = api("me/accounts", fields="id,name,instagram_business_account").get("data", [])
+    chave = "soares" if "soares" in MARCA.lower() else "justo"
+    pag = next((p for p in pags if chave in p.get("name", "").lower()), {})
+    FB = FB or pag.get("id", "")
+    IG = IG or pag.get("instagram_business_account", {}).get("id", "")
+
+
 def main():
     hoje = dt.date.today()
+    if TOKEN:
+        descobrir_ids()
     linhas = [f"# Resultados – {MARCA} – semana até {hoje:%d/%m/%Y}", ""]
     if not TOKEN:
         linhas.append("Sem META_TOKEN: relatório não gerado.")
