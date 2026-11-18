@@ -24,8 +24,8 @@ jobs:
       - name: Gerar relatório
         env:
           META_TOKEN: ${{ secrets.META_TOKEN }}
-          IG_USER_ID: ${{ vars.IG_USER_ID }}
-          FB_PAGE_ID: ${{ vars.FB_PAGE_ID }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID || vars.IG_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID || vars.FB_PAGE_ID }}
           MARCA: "Advocacia Soares"
         run: python relatorio.py
       - name: Salvar
