@@ -230,3 +230,15 @@ As duas marcas usam os MESMOS desenhos (cada uma na sua identidade). Para os per
   Proibido: partes, número do processo, valores, cidade, datas, detalhes que identifiquem; "conseguimos/vencemos";
   qualquer detalhe de método, prova ou estratégia (ver Sigilo do know-how). No máximo citar o tribunal de forma genérica.
   Todo artigo entra na planilha com ALERTA OAB preenchido para revisão do Jailson.
+
+## Resultados da semana e "turbinar" (Jailson, 18/11/2026)
+- Todo domingo às 17:11 o GitHub Actions roda `relatorio.yml` (`relatorio.py`) e grava `relatorios/ultimo.md`:
+  seguidores (IG e FB, com a variação da semana), alcance/interações da conta e os posts de feed dos últimos
+  30 dias (alcance, curtidas, comentários, salvos, compartilhamentos), com até 3 **candidatos a turbinar**.
+- Na rodada de domingo, ANTES de criar os posts: ler `relatorios/ultimo.md` e pôr no resumo único uma seção curta
+  "Resultados" (seguidores e variação; 3 melhores posts; candidatos a turbinar com o link). O que funcionou orienta
+  o tema/formato da semana seguinte.
+- Turbinar é decisão e pagamento do Jailson (feito por ele no app ou no Gerenciador de Anúncios); o Claude só
+  sugere. Na Advocacia Soares, turbinar só conteúdo informativo (Provimento 205/2021: impulsionamento permitido para
+  publicação informativa, sem captação, sem promessa).
+- Se o relatório trouxer "Avisos da API", avisar o Jailson (ex.: falta a permissão de insights no token).
