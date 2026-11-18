@@ -242,3 +242,14 @@ As duas marcas usam os MESMOS desenhos (cada uma na sua identidade). Para os per
   sugere. Na Advocacia Soares, turbinar só conteúdo informativo (Provimento 205/2021: impulsionamento permitido para
   publicação informativa, sem captação, sem promessa).
 - Se o relatório trouxer "Avisos da API", avisar o Jailson (ex.: falta a permissão de insights no token).
+
+## Linha editorial – decisão do Jailson (18/11/2026, por voz)
+- **Terça (feed 12h) = sempre RECUPERAÇÃO DE ATIVOS** (formas de recuperar, títulos, tempo de tramitação, liminares,
+  acordo judicial). **Quinta (feed 12h) = outras áreas de atuação ou material do Jailson**; pode repetir o tema de
+  terça quando fizer sentido. Stories seguem à parte.
+- Objetivo: despertar curiosidade ("por que alguns processos de cobrança terminam em dias e outros levam anos?"),
+  SEM revelar o método. Na Soares, sem caso concreto, sem prazo/resultado de processo do escritório (Provimento
+  205/2021): "caso" da terça = situação ilustrativa, sem identificar ninguém. Resultados concretos (tempo, número)
+  ficam na Justo Acordo.
+- NÃO direcionar o site nem as publicações para crédito bancário enquanto não houver banco/cooperativa como cliente.
+  No LinkedIn pode ser mais direcionado à recuperação de crédito/ativos.
