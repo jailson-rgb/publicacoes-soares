@@ -1,0 +1,98 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:M;font-weight:300;src:url('../fonts/montserrat-latin-300-normal.woff2')}
+@font-face{font-family:M;font-weight:400;src:url('../fonts/montserrat-latin-400-normal.woff2')}
+@font-face{font-family:M;font-weight:500;src:url('../fonts/montserrat-latin-500-normal.woff2')}
+@font-face{font-family:M;font-weight:600;src:url('../fonts/montserrat-latin-600-normal.woff2')}
+@font-face{font-family:M;font-weight:700;src:url('../fonts/montserrat-latin-700-normal.woff2')}
+:root{--dark:#1F3A3D;--gold:#C29A5B;--goldd:#8C6A3A;--cream:#F7F5F0;--light:#F4F1EA;--ink:#1C2B2C}
+html,body{margin:0}
+#r{width:1080px;height:1920px;background:var(--dark);position:relative;overflow:hidden;font-family:M,sans-serif;color:var(--light)}
+.bg{position:absolute;right:-260px;top:40px;opacity:.05;display:flex;align-items:flex-end;gap:60px}
+.bg div{width:180px;background:var(--light)}
+.mark{position:absolute;left:96px;top:130px;display:flex;align-items:flex-end;gap:12px;height:80px}
+.mark i{display:block;width:22px;transform-origin:bottom;animation:grow .6s cubic-bezier(.2,.8,.2,1) both}
+.mark i:nth-child(1){height:40px;background:var(--light);animation-delay:.1s}
+.mark i:nth-child(2){height:58px;background:var(--light);animation-delay:.22s}
+.mark i:nth-child(3){height:80px;background:var(--gold);animation-delay:.34s}
+.marktxt{position:absolute;left:206px;top:132px;animation:fadeL .6s .45s both}
+.marktxt p{margin:0;line-height:1}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes fadeL{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@keyframes out{to{opacity:0;transform:translateY(-40px)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes strike{from{width:0}to{width:100%}}
+.scene{position:absolute;left:96px;right:96px;top:300px;bottom:180px}
+.a{opacity:0;animation:up .7s cubic-bezier(.2,.8,.2,1) both}
+.kicker{font-size:30px;font-weight:600;letter-spacing:7px;color:var(--gold);margin:0}
+.title{font-size:96px;font-weight:700;line-height:1.04;letter-spacing:-2.5px;margin:20px 0 0}
+.title b{color:var(--gold)}
+.sub{font-size:44px;font-weight:300;line-height:1.3;margin:0}
+.uline{width:160px;height:8px;background:var(--gold);transform-origin:left;margin:44px 0}
+.box{border-radius:30px;background:#27474A;border:2px solid rgba(244,241,234,.14);padding:40px 44px;box-sizing:border-box}
+.box .l{font-size:24px;font-weight:600;letter-spacing:4px;color:var(--gold);margin:0}
+.box .v{font-size:46px;font-weight:700;margin:12px 0 0;line-height:1.15}
+.chip{display:inline-block;padding:26px 40px;border-radius:999px;border:3px solid var(--gold);font-size:44px;font-weight:600;margin:0 0 26px}
+.ref{font-size:28px;font-weight:600;color:var(--gold);letter-spacing:1px}
+.big{white-space:nowrap;font-size:250px;font-weight:700;line-height:.9;color:var(--gold);letter-spacing:-10px;margin:0}
+/* cenas: entram e saem */
+.s1{animation:fade .01s 0s both, out .5s 6.2s both}
+.s2{opacity:0;animation:fade .01s 6.7s both, out .5s 13.2s both}
+.s3{opacity:0;animation:fade .01s 13.7s both, out .5s 20.4s both}
+.s4{opacity:0;animation:fade .01s 20.9s both}
+.foot{position:absolute;left:96px;right:96px;bottom:80px;display:flex;justify-content:space-between;align-items:center;font-size:24px;color:rgba(244,241,234,.75);animation:fade .6s 1s both}
+.foot b{color:var(--gold);letter-spacing:3px;font-size:22px}
+</style></head><body>
+<div id="r">
+  <div class="bg"><div style="height:520px"></div><div style="height:760px"></div><div style="height:1000px"></div></div>
+  <div class="mark"><i></i><i></i><i></i></div>
+  <div class="marktxt"><p style="font-size:30px;font-weight:300">Advocacia</p><p style="font-size:48px;font-weight:700;color:var(--gold)">Soares</p></div>
+
+  <!-- CENA 1: o cenário (0–6,7 s) -->
+  <div class="scene s1">
+    <p class="kicker a" style="animation-delay:.7s">RECUPERAÇÃO DE ATIVOS</p>
+    <p class="title a" style="animation-delay:.9s">Novo CNPJ,<br><b>mesmas dívidas.</b></p>
+    <div class="uline a" style="animation:line .6s 1.5s both"></div>
+    <div class="box a" style="animation-delay:2.0s;position:relative">
+      <p class="l">CNPJ ANTIGO</p><p class="v">Fica só com o passivo</p></div>
+    <p class="a" style="animation-delay:2.9s;font-size:70px;color:var(--gold);margin:14px 0 14px 40px">↓</p>
+    <div class="box a" style="animation-delay:3.4s;background:var(--cream);color:var(--ink);border-color:var(--gold)">
+      <p class="l" style="color:var(--goldd)">CNPJ NOVO</p><p class="v">Mesmo negócio, mesma operação</p></div>
+    <p class="sub a" style="animation-delay:4.5s;margin-top:44px">E o credor? Fica preso a uma <b style="font-weight:700;color:var(--gold)">casca vazia</b>?</p>
+  </div>
+
+  <!-- CENA 2: STJ – sucessão presumida (6,7–13,7 s) -->
+  <div class="scene s2">
+    <p class="kicker a" style="animation-delay:6.9s">O QUE DIZ O STJ</p>
+    <p class="title a" style="animation-delay:7.1s;font-size:84px">A sucessão pode ser <b>presumida</b> quando há:</p>
+    <div class="uline a" style="animation:line .6s 7.7s both"></div>
+    <div><span class="chip a" style="animation:pop .5s 8.2s cubic-bezier(.3,1.6,.5,1) both">mesma atividade</span></div>
+    <div><span class="chip a" style="animation:pop .5s 8.9s cubic-bezier(.3,1.6,.5,1) both">mesmo endereço</span></div>
+    <div><span class="chip a" style="animation:pop .5s 9.6s cubic-bezier(.3,1.6,.5,1) both">mesmo objeto social</span></div>
+    <p class="sub a" style="animation-delay:10.5s;margin-top:30px">Não precisa de contrato de transferência: vale a <b style="font-weight:700">realidade econômica</b>.</p>
+    <p class="ref a" style="animation-delay:11.2s;margin-top:34px">AgInt no REsp 1.837.435/SP · STJ</p>
+  </div>
+
+  <!-- CENA 3: recuperação judicial (13,7–20,9 s) -->
+  <div class="scene s3">
+    <p class="kicker a" style="animation-delay:13.9s">E SE PEDIREM RECUPERAÇÃO JUDICIAL?</p>
+    <p class="title a" style="animation-delay:14.1s;font-size:76px">Cada empresa precisa ter, sozinha, mais de</p>
+    <p class="big a" style="animation:pop .6s 14.9s cubic-bezier(.3,1.6,.5,1) both;margin-top:30px">2 anos</p>
+    <p class="sub a" style="animation-delay:15.6s;margin-top:10px">de atividade regular.</p>
+    <div class="box a" style="animation-delay:16.8s;margin-top:60px;background:var(--cream);color:var(--ink);border-color:var(--gold)">
+      <p class="v" style="margin:0">O CNPJ aberto há poucos meses pode ficar <span style="color:var(--goldd)">fora da recuperação judicial.</span></p></div>
+    <p class="ref a" style="animation-delay:17.6s;margin-top:34px">REsp 2.218.122/RS · STJ · abril de 2026</p>
+  </div>
+
+  <!-- CENA 4: encerramento (20,9–26 s) -->
+  <div class="scene s4" style="display:flex;flex-direction:column;justify-content:center">
+    <p class="title a" style="animation-delay:21.1s;font-size:100px">Trocar de CNPJ <b>não apaga dívidas.</b></p>
+    <div class="uline a" style="animation:line .6s 21.9s both"></div>
+    <p class="sub a" style="animation-delay:22.4s">O tempo conta: quanto antes a inadimplência passa por análise técnica, mais alternativas o credor tem.</p>
+    <p class="ref a" style="animation-delay:23.4s;margin-top:60px;font-size:30px">Direito Empresarial · Crédito e Patrimônio</p>
+  </div>
+
+  <div class="foot"><span>advocaciasoares.com · OAB/RS 115.168</span><b>DIREITO EMPRESARIAL</b></div>
+</div></body></html>
