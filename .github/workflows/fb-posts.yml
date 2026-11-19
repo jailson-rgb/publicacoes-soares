@@ -1,0 +1,43 @@
+name: Facebook – listar ou excluir post (manutenção)
+
+on:
+  workflow_dispatch:
+    inputs:
+      excluir:
+        description: "ID do post a excluir (vazio = só listar os posts de hoje)"
+        required: false
+        default: ""
+
+jobs:
+  fb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Listar / excluir
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID || vars.FB_PAGE_ID }}
+          EXCLUIR: ${{ github.event.inputs.excluir }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          G = "https://graph.facebook.com/v21.0"; T = os.environ["META_TOKEN"]
+          def api(path, method="GET", **p):
+              p["access_token"] = T
+              q = urllib.parse.urlencode(p)
+              req = urllib.request.Request(f"{G}/{path}?{q}" if method == "GET" else f"{G}/{path}", data=None if method == "GET" else q.encode(), method=method)
+              try:
+                  return json.load(urllib.request.urlopen(req))
+              except urllib.error.HTTPError as e:
+                  return {"erro": e.read().decode()[:300]}
+          page = os.environ.get("FB_PAGE_ID")
+          if not page:
+              ps = api("me/accounts", fields="id,name").get("data", [])
+              page = next(p["id"] for p in ps if "soares" in p["name"].lower())
+          ptok = api(page, fields="access_token").get("access_token", T)
+          T = ptok
+          ex = os.environ.get("EXCLUIR", "").strip()
+          if ex:
+              print("EXCLUIR", ex, api(ex, method="DELETE"))
+          for p in api(f"{page}/posts", fields="id,created_time,message", limit=15).get("data", []):
+              print(p["id"], p["created_time"], (p.get("message") or "").split("\n")[0][:70])
+          PY
