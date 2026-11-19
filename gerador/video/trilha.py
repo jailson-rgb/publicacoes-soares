@@ -4,6 +4,7 @@ Persona: escritório empresarial sóbrio, confiável e moderno -> andamento calm
 tom menor/maior suave, piano em arpejo discreto, pulso grave leve. Nada de batida agitada.
 Uso: python gerador/video/trilha.py saida.wav [segundos] [variacao]
 "variacao" (0, 1, 2...) troca a progressão de acordes, para os vídeos não soarem sempre iguais.
+"variacao" 10, 11 = versão ANIMADA (112 bpm, pop corporativo leve), aprovada como opção em 19/11/2026.
 """
 import sys
 import wave
@@ -55,6 +56,8 @@ def baixo(f, dur):
 
 
 def gerar(segundos=30.0, variacao=0):
+    if variacao >= 10:
+        return gerar_animada(segundos, variacao - 10)
     prog = PROGRESSOES[variacao % len(PROGRESSOES)]
     total = int(segundos * SR) + SR
     out = np.zeros(total)
@@ -86,6 +89,74 @@ def gerar(segundos=30.0, variacao=0):
     out *= env(len(out), min(1.0, segundos / 4), min(2.5, segundos / 3))
     out = out / (np.max(np.abs(out)) + 1e-9) * 0.5
     return out
+
+
+# ---------------------------------------------------------------- versão ANIMADA (variacao >= 10)
+# Pedido do Jailson (19/11/2026): opção mais animada para vídeos de feed/Reels. Pop corporativo leve, 112 bpm,
+# progressão em tom maior, bateria eletrônica suave (bumbo, palma, chimbal), baixo em colcheias e pluck em arpejo.
+PROG_ANIMADA = [
+    [("C3", "E3", "G3", "B3"), ("G2", "B2", "D3", "A3"), ("A2", "C3", "E3", "G3"), ("F2", "A2", "C3", "E3")],
+    [("F2", "A2", "C3", "E3"), ("G2", "B2", "D3", "F3"), ("E2", "G#2", "B2", "D3"), ("A2", "C3", "E3", "G3")],
+]
+
+
+def _kick(dur=0.35):
+    t = np.arange(int(dur * SR)) / SR
+    f = 110 * np.exp(-18 * t) + 45
+    return np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-9 * t)
+
+
+def _clap(dur=0.18):
+    t = np.arange(int(dur * SR)) / SR
+    return np.random.default_rng(1).uniform(-1, 1, len(t)) * np.exp(-22 * t)
+
+
+def _hat(dur=0.05):
+    t = np.arange(int(dur * SR)) / SR
+    r = np.random.default_rng(2).uniform(-1, 1, len(t))
+    return np.diff(np.concatenate([[0], r])) * np.exp(-60 * t)
+
+
+def _pluck(f, dur=0.45):
+    t = np.arange(int(dur * SR)) / SR
+    s = np.sign(np.sin(2 * np.pi * f * t)) * 0.3 + np.sin(2 * np.pi * f * t)
+    return s * np.exp(-7 * t) * env(len(t), 0.003, 0.05)
+
+
+def gerar_animada(segundos=30.0, variacao=0):
+    bpm = 112
+    beat = 60 / bpm
+    prog = PROG_ANIMADA[variacao % len(PROG_ANIMADA)]
+    total = int(segundos * SR) + SR
+    out = np.zeros(total)
+
+    def add(sig, t0, g):
+        a = int(t0 * SR)
+        if a < total:
+            out[a:a + len(sig)] += sig[:max(0, total - a)] * g
+
+    pos, i = 0.0, 0
+    k, c, h = _kick(), _clap(), _hat()
+    while pos < segundos:
+        acorde = prog[i % len(prog)]
+        for n in acorde:
+            add(pad(freq(n), 4 * beat + 1.0), pos, 0.05)
+        for b in range(8):  # baixo em colcheias
+            add(baixo(freq(acorde[0]), beat)[:int(beat / 2 * SR)], pos + b * beat / 2, 0.20)
+        for q in range(4):
+            add(k, pos + q * beat, 0.32)
+            if q in (1, 3):
+                add(c, pos + q * beat, 0.10)
+        for e8 in range(8):
+            add(h, pos + e8 * beat / 2 + beat / 4, 0.07)
+        arp = [0, 1, 2, 3, 2, 1, 2, 3, 0, 2, 1, 3, 2, 3, 1, 2]
+        for x in range(16):  # pluck em semicolcheias
+            add(_pluck(freq(acorde[arp[x]]) * 2), pos + x * beat / 4, 0.06 if x % 2 == 0 else 0.04)
+        pos += 4 * beat
+        i += 1
+    out = out[:int(segundos * SR)]
+    out *= env(len(out), min(0.6, segundos / 6), min(2.0, segundos / 4))
+    return out / (np.max(np.abs(out)) + 1e-9) * 0.55
 
 
 def salvar(caminho, sinal):
