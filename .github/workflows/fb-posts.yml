@@ -38,6 +38,11 @@ jobs:
           ex = os.environ.get("EXCLUIR", "").strip()
           if ex:
               print("EXCLUIR", ex, api(ex, method="DELETE"))
+          ig = api(page, fields="instagram_business_account").get("instagram_business_account", {}).get("id")
+          if ig:
+              print("STORIES IG ATIVOS:")
+              for st in api(f"{ig}/stories", fields="id,timestamp,media_url").get("data", []):
+                  print("IGSTORY", st["id"], st.get("timestamp"))
           for p in api(f"{page}/posts", fields="id,created_time,message", limit=15).get("data", []):
               print(p["id"], p["created_time"], (p.get("message") or "").split("\n")[0][:70])
           PY

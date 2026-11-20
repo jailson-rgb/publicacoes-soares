@@ -1,0 +1,15 @@
+{"id":"P2026-015","tipo":"Carrossel","tema":"Direito empresarial","laminas":[
+{"layout":"capa","titulo":"Fim da escala 6x1: o que muda para a sua empresa","subtitulo":"Emenda Constitucional 141/2026 — regras, prazos e exceções."},
+{"layout":"linha_tempo","chamada":"Os prazos","titulo":"A mudança vem em duas etapas","marcos":[
+ {"quando":"16/10/2026","titulo":"Publicação","texto":"EC 141 publicada no Diário Oficial da União."},
+ {"quando":"Dez/2026","titulo":"42 horas + 2 folgas","texto":"Dois meses após a publicação: jornada máxima de 42h semanais e 2 dias de descanso."},
+ {"quando":"Dez/2027","titulo":"40 horas","texto":"Um ano depois: limite de 40h semanais."}]},
+{"layout":"grade","titulo":"As regras básicas","blocos":[
+ {"titulo":"2 folgas por semana","texto":"Repouso remunerado de 2 dias, um preferencialmente no domingo."},
+ {"titulo":"8 horas por dia","texto":"O limite diário continua o mesmo."},
+ {"titulo":"Sem redução de salário","texto":"Nem nominal nem proporcional, inclusive nos pisos."},
+ {"titulo":"Compensação","texto":"Admitida por acordo ou convenção coletiva, respeitadas as 2 folgas."}]},
+{"layout":"topico","numero":"1","titulo":"Exceções e casos especiais","texto":"Empregado com diploma superior e salário a partir de 2,5 vezes o teto do INSS fica, em regra, fora do controle de jornada. Micro e pequenas empresas poderão ter regras de transição por lei complementar. Regimes diferenciados (atividades contínuas, por exemplo) dependem de lei e de negociação coletiva."},
+{"layout":"topico","numero":"2","titulo":"Acordos e convenções coletivas","texto":"Cláusulas sobre jornada e descanso que contrariem a nova regra perdem efeito dois meses após a publicação. Durante a transição, a negociação coletiva pode ampliar a jornada diária para distribuir as 42 horas."},
+{"layout":"fechamento","titulo":"Quem trabalha em 6x1 precisa se reorganizar já.","texto":"Comércio, serviços e indústria com turnos de seis dias: hora de revisar escalas, contratos e acordos coletivos antes de dezembro. Fonte: EC 141/2026 (DOU de 16/10/2026)."}
+]}
