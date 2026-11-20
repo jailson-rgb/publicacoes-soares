@@ -176,7 +176,15 @@ def instagram(tipo, urls, legenda):
         for u in urls:
             c = api("POST", f"{IG_USER_ID}/media", image_url=u, media_type="STORIES")["id"]
             aguardar_container(c)
-            ids.append(api("POST", f"{IG_USER_ID}/media_publish", creation_id=c)["id"])
+            for tentativa in range(4):  # a Meta às vezes responde "mídia não encontrada" logo após FINISHED
+                try:
+                    ids.append(api("POST", f"{IG_USER_ID}/media_publish", creation_id=c)["id"])
+                    break
+                except Exception:
+                    if tentativa == 3:
+                        raise
+                    time.sleep(10)
+            time.sleep(3)
         return ids
     if len(urls) == 1:
         c = api("POST", f"{IG_USER_ID}/media", image_url=urls[0], caption=legenda)["id"]
