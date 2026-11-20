@@ -262,5 +262,5 @@ As duas marcas usam os MESMOS desenhos (cada uma na sua identidade). Para os per
   (trabalhista, tributária, societária) com impacto direto no empresário.
 - Norma nova relevante vira post informativo (regras, prazos, quem é atingido), com fonte "DOU de dd/mm/aaaa" e,
   sempre que possível, conferida no texto oficial (Planalto). Sem opinião política.
-- PAUTA FIXA 23/11/2026 (segunda): "Fim da escala 6x1" (EC 141/2026) – P2026-015 (carrossel 12h) e P2026-016
-  (réplica em stories 12h05). A rodada de domingo 22/11 NÃO cria outro feed/story para a segunda 23/11.
+- Fim da escala 6x1 (EC 141/2026): P2026-015 (carrossel) e P2026-016 (stories) publicados ANTECIPADAMENTE em
+  20/11/2026 por pedido do Jailson. A semana de 23/11 segue a grade normal; não repetir o tema.
