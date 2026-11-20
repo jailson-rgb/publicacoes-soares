@@ -253,3 +253,14 @@ As duas marcas usam os MESMOS desenhos (cada uma na sua identidade). Para os per
   ficam na Justo Acordo.
 - NÃO direcionar o site nem as publicações para crédito bancário enquanto não houver banco/cooperativa como cliente.
   No LinkedIn pode ser mais direcionado à recuperação de crédito/ativos.
+
+## Fonte: Diário Oficial (Jailson, 20/11/2026)
+- Além dos Informativos STJ/STF, Serasa e Banco Central, consultar toda semana o **Diário Oficial da União**
+  (in.gov.br, Seção 1: leis, medidas provisórias, emendas constitucionais, decretos) e, quando pertinente, o Diário
+  Oficial do RS. Mesmo filtro de área de atuação dos Informativos: direito empresarial, cobrança, títulos de
+  crédito, execução, recuperação judicial e falência, garantias, e normas que mudem a rotina das empresas
+  (trabalhista, tributária, societária) com impacto direto no empresário.
+- Norma nova relevante vira post informativo (regras, prazos, quem é atingido), com fonte "DOU de dd/mm/aaaa" e,
+  sempre que possível, conferida no texto oficial (Planalto). Sem opinião política.
+- PAUTA FIXA 23/11/2026 (segunda): "Fim da escala 6x1" (EC 141/2026) – P2026-015 (carrossel 12h) e P2026-016
+  (réplica em stories 12h05). A rodada de domingo 22/11 NÃO cria outro feed/story para a segunda 23/11.
