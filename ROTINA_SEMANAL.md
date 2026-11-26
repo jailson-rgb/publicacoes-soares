@@ -129,6 +129,10 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
   terminar com "Advocacia Soares · Direito Empresarial · Crédito e Patrimônio". Sem promessa e sem "fale conosco agora".
 
 ## Vídeos (aprovado pelo Jailson em 15/11/2026)
+- VÍDEO DO JAILSON FALANDO (padrão aprovado em 26/11/2026, Tema 929): cortar as pausas; logo no canto superior e
+  legenda corrigida embaixo; nada por cima dele – as ilustrações são CENAS em tela cheia (3–6 s, a voz continua por
+  baixo) quando o assunto muda, podendo citar a íntegra do artigo de lei com grifo; encerramento com o logo; trilha
+  baixa. No fim, ACELERAR PARA 1,15x (setpts=PTS/1.15 + atempo=1.15), o que ajuda a ficar em até 3 min (limite dos Reels).
 - Duas variações:
   1. **Vídeo animado**: só motion graphics na identidade Soares (ex.: P2026-001 "As 3 formas de cobrar").
   2. **Vídeo do Jailson falando + intervenções ilustrativas** (objetivo: deixar DIDÁTICO o que ele explica): ele grava
