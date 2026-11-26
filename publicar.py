@@ -109,7 +109,12 @@ def preparar_midia(post):
     os.makedirs(pasta, exist_ok=True)
     caminhos = []
     for n, fid in enumerate(ids, 1):
-        bruto = baixar(f"https://drive.google.com/uc?export=download&id={fid}")
+        if fid.startswith("repo:"):
+            # arquivo já versionado neste repositório (ex.: vídeos grandes em rascunhos/<ID>/)
+            with open(fid[5:], "rb") as f:
+                bruto = f.read()
+        else:
+            bruto = baixar(f"https://drive.google.com/uc?export=download&id={fid}")
         if bruto[:200].lstrip().lower().startswith(b"<!doctype html") or bruto[:200].lstrip().lower().startswith(b"<html"):
             # arquivo grande (vídeo): o Drive pede confirmação; este endereço baixa direto
             bruto = baixar(f"https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t")
@@ -166,7 +171,7 @@ def aguardar_container(cid, tentativas=30):
 
 
 def instagram(tipo, urls, legenda):
-    if urls[0].endswith(".mp4"):
+    if urls[0].endswith(".mp4") and tipo != "Story":
         # vídeo próprio (animação ou fala do Jailson): publicado como Reels, também no feed
         c = api("POST", f"{IG_USER_ID}/media", media_type="REELS", video_url=urls[0], caption=legenda, share_to_feed="true")["id"]
         aguardar_container(c, 120)  # vídeo leva alguns minutos para processar
@@ -174,8 +179,12 @@ def instagram(tipo, urls, legenda):
     if tipo == "Story":
         ids = []
         for u in urls:
-            c = api("POST", f"{IG_USER_ID}/media", image_url=u, media_type="STORIES")["id"]
-            aguardar_container(c)
+            if u.endswith(".mp4"):  # story em vídeo (ex.: cápsulas de um vídeo do feed)
+                c = api("POST", f"{IG_USER_ID}/media", video_url=u, media_type="STORIES")["id"]
+                aguardar_container(c, 120)
+            else:
+                c = api("POST", f"{IG_USER_ID}/media", image_url=u, media_type="STORIES")["id"]
+                aguardar_container(c)
             for tentativa in range(4):  # a Meta às vezes responde "mídia não encontrada" logo após FINISHED
                 try:
                     ids.append(api("POST", f"{IG_USER_ID}/media_publish", creation_id=c)["id"])
@@ -203,15 +212,39 @@ def page_token():
     return api("GET", FB_PAGE_ID, fields="access_token").get("access_token", TOKEN)
 
 
+def story_video_facebook(u):
+    """Story em vídeo na Página: início, envio por file_url e finalização (API video_stories)."""
+    ini = api("POST", f"{FB_PAGE_ID}/video_stories", upload_phase="start")
+    req = urllib.request.Request(ini["upload_url"], data=b"", method="POST",
+                                 headers={"Authorization": f"OAuth {TOKEN}", "file_url": u})
+    try:
+        with urllib.request.urlopen(req, timeout=300) as r:
+            r.read()
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"upload do story em vídeo: {e.read().decode()[:300]}") from None
+    for tentativa in range(6):
+        try:
+            fim = api("POST", f"{FB_PAGE_ID}/video_stories", upload_phase="finish", video_id=ini["video_id"])
+            return fim.get("post_id", ini["video_id"])
+        except Exception:
+            if tentativa == 5:
+                raise
+            time.sleep(15)
+
+
 def facebook(tipo, urls, legenda):
     global TOKEN
     original, TOKEN = TOKEN, page_token()
     try:
-        if urls[0].endswith(".mp4"):
+        if urls[0].endswith(".mp4") and tipo != "Story":
             return [api("POST", f"{FB_PAGE_ID}/videos", file_url=urls[0], description=legenda)["id"]]
         if tipo == "Story":
             ids = []
             for u in urls:
+                if u.endswith(".mp4"):
+                    ids.append(story_video_facebook(u))
+                    time.sleep(3)
+                    continue
                 foto = api("POST", f"{FB_PAGE_ID}/photos", url=u, published="false")["id"]
                 ids.append(api("POST", f"{FB_PAGE_ID}/photo_stories", photo_id=foto).get("post_id", foto))
             return ids
