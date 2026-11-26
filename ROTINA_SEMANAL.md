@@ -16,7 +16,9 @@ pedidos avulsos ("faz um story sobre...").
 - Renderizador: `gerador/render.py` deste repositório (público: `git clone https://github.com/jailson-rgb/publicacoes-soares`).
 
 ## Grade da semana seguinte (horário de Brasília)
-- Story: segunda às 12:00; terça a sexta às 09:00 (indicador do mês, "você sabia?", chamada para o post do feed).
+- Story: SÓ segunda (12:00), quarta (09:00) e sexta (09:00) – decisão do Jailson, 26/11/2026 (antes era todo dia útil).
+  Terça e quinta sem story. Temas: indicador do mês, "você sabia?", chamada para o post do feed. Pode coincidir com o
+  horário do story da Justo Acordo (ok do Jailson).
   (O Jailson costuma aprovar na segunda de manhã; por isso o story de segunda sai ao meio-dia.)
 - Publicação de feed de jurisprudência (STJ/STF): terça, 12:00.
 - Publicação de feed com conteúdo do Jailson (pasta ENTRADA): quinta, 12:00. Sem conteúdo novo → tema educativo de direito empresarial ou recuperação de ativos.
@@ -79,7 +81,7 @@ Se nada da semana passar no filtro, não sai trend naquela semana (registrar iss
 1. Trend de ASSUNTO – toda semana:
    - Pesquisar (busca na web/notícias da semana) o tema mais comentado que afete empresas: datas do varejo, caixa e 13º,
      reforma tributária, recuperação judicial de empresa conhecida, golpes contra empresas, mudanças de lei etc.
-   - Virar 1 story (09:00 de um dia útil, no lugar de um story comum) ou 1 carrossel extra (quarta, 12:00) se o tema render.
+   - Virar 1 story (no lugar do story de quarta ou sexta, 09:00) ou 1 carrossel extra (quarta, 12:00) se o tema render.
    - FONTE = "Trend de assunto" + link da fonte na coluna TEMA.
 2. Trend de FORMATO (Reels) – a cada 15 dias (semanas pares do ano: rodar quando o nº da semana ISO for par):
    - Pesquisar os formatos de Reels em alta na semana (POV, "3 erros que…", "ninguém te conta que…", texto na tela
