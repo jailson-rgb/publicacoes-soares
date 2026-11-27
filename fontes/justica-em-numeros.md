@@ -6,7 +6,7 @@ Complemento (recortes por tribunal/assunto): Painel de Estatísticas do Poder Ju
 Nova edição sai todo ano em junho: atualizar esta folha.
 
 ## Ritmo de uso
-- FEED: 1 post com dados do Justiça em Números a cada 2 semanas, ALTERNANDO as marcas (semana A Soares, semana B Justo Acordo).
+- FEED: 1 post com dados do Justiça em Números a cada 2 semanas, ALTERNANDO as marcas. COMEÇA PELA JUSTO ACORDO na semana de 30/11/2026 (decisão do Claude, autorizada pelo Jailson: comparação execução judicial x acordo tende a engajar mais); a Soares entra na semana de 14/12/2026, e assim por diante.
 - STORIES: os números podem aparecer em story em qualquer semana (story_numero / dado), nas duas marcas.
 
 ## Números já levantados (edição 2026, ano-base 2025) – CONFERIR NO PDF OFICIAL ANTES DE USAR
