@@ -270,3 +270,10 @@ As duas marcas usam os MESMOS desenhos (cada uma na sua identidade). Para os per
   sempre que possível, conferida no texto oficial (Planalto). Sem opinião política.
 - Fim da escala 6x1 (EC 141/2026): P2026-015 (carrossel) e P2026-016 (stories) publicados ANTECIPADAMENTE em
   20/11/2026 por pedido do Jailson. A semana de 23/11 segue a grade normal; não repetir o tema.
+
+## Fonte: Justiça em Números do CNJ (Jailson, 26/11/2026)
+- Usar o relatório anual Justiça em Números (CNJ) como fonte fixa de dados do Judiciário. Números, ângulos e ritmo em
+  fontes/justica-em-numeros.md: 1 post de feed a cada 2 semanas ALTERNANDO as marcas (uma semana Soares, a seguinte
+  Justo Acordo) e stories com esses números em qualquer semana. Citar "CNJ, Justiça em Números 2026 (ano-base 2025)";
+  conferir cada número no PDF oficial antes de usar.
+
